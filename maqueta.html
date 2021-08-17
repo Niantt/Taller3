@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script defer src="scripts/alpine.min.js"></script>
+    <link rel="stylesheet" href="css/tailwind.min.css">
+    <title>Spica Project</title>
+</head>
+<body>
+    <!-- navbar goes here -->
+<nav class="bg-gray-800">
+    <div class="max-w-5xl mx-auto px-4">
+      <div class="flex justify-between">
+        <div class="flex space-x-8">
+          <!-- logo -->
+          <div>
+            <a href="#" class="flex items-center py-3 px-2 text-white hover:text-gray-500">
+              <img  width="60" src="logo.png"> 
+            <div class="flex flex-col">
+              <span class="text-lg font-black max-h-4 ">Spica</span>
+              <span class="text-lg font-black max-h-5">Technology</span>
+              <span class="text-xs tracking-widest ">Corporation</span>
+            </div>
+            </a>
+          </div>
+          <div class="flex items-center space-x-2">
+            <a href="#" class="py-5 px-5 text-white hover:text-gray-500">Set Mode</a>
+            <a href="#" class="py-5 px-5 text-white hover:text-gray-500">Reboot</a>
+            <a href="#" class="py-5 px-5 text-white hover:text-gray-500">Shutdown</a>
+            <a href="#" class="py-5 px-5 text-white hover:text-gray-500">Get Station ID</a>
+          </div>
+        </div>
+      </div>
+    </div>
+</nav>
+<!-- content goes here -->
+<div class="container mx-auto mt-5 text-center">
+<div class="grid grid-rows-6 grid-cols-10 gap-4">
+    <!-- opciones -->
+    <div class="bg-red-400 row-span-2 col-span-2 my-3">opciones</div>
+    <!-- video -->
+    <div class="bg-blue-400 row-span-4 col-span-5 my-3">video</div>  
+    <!-- datos -->
+    <div class="bg-yellow-400 row-span-6 col-span-3 my-3">datos</div> 
+    <!-- botones -->
+    <div class="bg-pink-400 row-span-2 col-start-3 col-span-5">botones</div>
+</div>
+</div>       
+</body>
+</html>
