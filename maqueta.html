@@ -17,7 +17,7 @@
           <!-- logo -->
           <div>
             <a href="#" class="flex items-center py-3 px-2 text-white hover:text-gray-500">
-              <img  width="60" src="logo.png"> 
+              <img  width="60" src="/resources/img/logo.png"> 
             <div class="flex flex-col">
               <span class="text-lg font-black max-h-4 ">Spica</span>
               <span class="text-lg font-black max-h-5">Technology</span>
@@ -39,13 +39,31 @@
 <div class="container mx-auto mt-5 text-center">
 <div class="grid grid-rows-6 grid-cols-10 gap-4">
     <!-- opciones -->
-    <div class="bg-red-400 row-span-2 col-span-2 my-3">opciones</div>
+    <div class="shadow-2xl bg-gray-500 border-2 rounded-xl px-5 py-5 border-gray-700 row-span-3 col-span-2 mb-9">
+      <p class="font-extrabold font-mono italic text-gray-300 text-left -m-3 pb-7">Opciones de video</p>
+      <div class="border-2 border-gray-800 rounded-lg py-2 text-gray-300 cursor-pointer hover:bg-gray-800 hover:text-white">Prepare</div>
+      <div class="border-2 border-gray-800 rounded-lg my-8 py-2  text-gray-300 cursor-pointer hover:bg-gray-800 hover:text-white">Record</div>
+      <div class="border-2 border-gray-800 rounded-lg py-2 text-gray-300 cursor-pointer hover:bg-gray-800 hover:text-white">Stop</div>
+    </div>
     <!-- video -->
-    <div class="bg-blue-400 row-span-4 col-span-5 my-3">video</div>  
+    <div class="shadow-md bg-blue-400 border-2 rounded-xl px-5 py-5 border-gray-700  row-span-4 col-span-5">video</div>  
     <!-- datos -->
-    <div class="bg-yellow-400 row-span-6 col-span-3 my-3">datos</div> 
+    <div class="shadow-2xl bg-gray-400 border-2 rounded-xl px-5 py-5 border-gray-700 mb-28 row-span-6 col-span-3">
+      <p class="font-extrabold font-mono italic text-gray-300 text-left -m-3 pb-7">Framerate</p>
+      <p class="font-extrabold font-mono italic text-gray-300 text-left -m-3 pb-7">Exposure</p>
+      <p class="font-extrabold font-mono italic text-gray-300 text-left -m-3 pb-7">Shutter</p>
+      <p class="font-extrabold font-mono italic text-gray-300 text-left -m-3 pb-7">Black-reference</p>
+      <p class="font-extrabold font-mono italic text-gray-300 text-left -m-3 pb-7">Gain</p>
+      <p class="font-extrabold font-mono italic text-gray-300 text-left -m-3 pb-7">Whitebalance</p>
+    </div> 
     <!-- botones -->
-    <div class="bg-pink-400 row-span-2 col-start-3 col-span-5">botones</div>
+    <div class="divide-x-2 divide-white shadow-2xl border-2 rounded-2xl p-2 border-gray-700 flex items-stretch bg-gray-400 mb-28 row-span-2 col-start-3 col-span-5">
+      <img class="px-4 mx-auto" src="resources/svg/previous.svg">
+      <img class="px-4 mx-auto" src="resources/svg/bw.svg">
+      <img class="px-4 mx-auto" src="resources/svg/play.svg">
+      <img class="px-4 mx-auto" src="resources/svg/ff.svg">
+      <img class="px-4 mx-auto" src="resources/svg/next.svg">
+    </div>
 </div>
 </div>       
 </body>
