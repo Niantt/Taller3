@@ -1,0 +1,114 @@
+<!DOCTYPE html> 
+<html lang="en"> 
+<head> 
+    <meta charset="UTF-8"> 
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <script defer src="scripts/alpine.min.js"></script> 
+    <link rel="stylesheet" href="css/tailwind.min.css"> 
+    <title>Spica Project</title> 
+</head> 
+<body> 
+    <!-- navbar goes here --> 
+<nav class="bg-gray-800"> 
+    <div class="ml-40">  
+      <div class="flex justify-between"> 
+        <div class="flex space-x-8"> 
+          <!-- logo --> 
+          <div> 
+            <a href="#" class="flex items-center py-3 px-2 text-white hover:text-gray-500"> 
+              <img  width="60" src="/resources/img/logo.png">  
+            <div class="flex flex-col"> 
+              <span class="text-lg font-black max-h-4 ">Spica</span> 
+              <span class="text-lg font-black max-h-5">Technology</span> 
+              <span class="text-xs tracking-widest ">Corporation</span> 
+            </div> 
+            </a> 
+          </div> 
+          <div class="flex items-center space-x-2"> 
+            <a href="#" class="py-5 px-5 text-white hover:text-gray-500">Set Mode</a> 
+            <a href="#" class="py-5 px-5 text-white hover:text-gray-500">Reboot</a> 
+            <a href="#" class="py-5 px-5 text-white hover:text-gray-500">Shutdown</a> 
+            <a href="#" class="py-5 px-5 text-white hover:text-gray-500">Get Station ID</a> 
+          </div> 
+        </div> 
+      </div> 
+    </div> 
+</nav> 
+<!-- content goes here --> 
+<div class="container mx-auto mt-5 text-center"> 
+<div class="grid grid-rows-6 grid-cols-10 gap-4"> 
+    <!-- opciones --> 
+    <div class="shadow-2xl bg-gray-500 border-2 rounded-xl px-5 py-5 border-gray-700 row-span-3 col-span-2 mb-9"> 
+        <p class="font-extrabold font-mono italic text-gray-300 text-left -m-3 pb-7">Opciones de video</p> 
+        <div class="col-xs-4"><a href="#" class="btn btn-primary center-block pcmd" data-target="system/station1/dhs1" data-cmd="mode" data-par="setup">Setup</a></div>
+					<div class="col-xs-4"><a href="#" class="btn btn-primary center-block pcmd" data-target="system/station1/dhs1" data-cmd="mode" data-par="record">Record</a></div>
+					<div class="col-xs-4"><a href="#" class="btn btn-primary center-block pcmd" data-target="system/station1/dhs1" data-cmd="mode" data-par="playback">Playback</a></div>
+      </div> 
+    <!-- video --> 
+    <div class="shadow-md bg-blue-400 border-2 rounded-xl px-5 py-5 border-gray-700  row-span-4 col-span-5">video</div>   
+    <!-- datos --> 
+    <div class="shadow-2xl bg-gray-400 border-2 rounded-xl px-5 py-5 border-gray-700 mb-28 row-span-6 col-span-3"> 
+        <p class="font-extrabold font-mono italic text-gray-300 text-left -m-3 pb-7">Framerate</p> 
+        <p class="font-extrabold font-mono italic text-gray-300 text-left -m-3 pb-7">Exposure</p> 
+        <p class="font-extrabold font-mono italic text-gray-300 text-left -m-3 pb-7">Shutter</p> 
+        <p class="font-extrabold font-mono italic text-gray-300 text-left -m-3 pb-7">Black-reference</p> 
+        <p class="font-extrabold font-mono italic text-gray-300 text-left -m-3 pb-7">Gain</p> 
+        <p class="font-extrabold font-mono italic text-gray-300 text-left -m-3 pb-7">Whitebalance</p> 
+      </div>    
+    <!-- botones --> 
+    <div class="divide-x-2 divide-white shadow-2xl border-2 rounded-2xl p-2 border-gray-700 flex items-stretch bg-gray-400 mb-28 row-span-2 col-start-3 col-span-5"> 
+        <div class="col-xs-3"><a href="#" class="btn btn-primary center-block pcmd" data-target="system/station1/dhs1/playback" data-cmd="first" data-par="">First</a></div> 
+        <div class="col-xs-3"><a href="#" class="btn btn-primary center-block pcmd" data-target="system/station1/dhs1/playback" data-cmd="prev" data-par="10">Prev</a></div>
+        <div class="col-xs-4"><a href="#" class="btn btn-primary center-block pcmd" data-target="system/station1/dhs1/playback" data-cmd="stop" data-par="">Stop</a></div> 
+        <div class="col-xs-4"><a href="#" class="btn btn-primary center-block pcmd" data-target="system/station1/dhs1/playback" data-cmd="play" data-par="">Play</a></div> 
+        <div class="col-xs-3"><a href="#" class="btn btn-primary center-block pcmd" data-target="system/station1/dhs1/playback" data-cmd="next" data-par="10">Next</a></div>
+        <div class="col-xs-3"><a href="#" class="btn btn-primary center-block pcmd" data-target="system/station1/dhs1/playback" data-cmd="last" data-par="">Last</a></div>
+      </div>  
+</div> 
+</div>
+
+<script>
+
+    $('.pcmd').on('click',function(e){
+    
+        fetch(e.target.dataset.target, {
+    
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({ cmd: e.target.dataset.cmd, par: e.target.dataset.par }),
+            
+        })
+        .then(response => response.json())
+        .then(data => {console.log('Success:', data);
+        })
+        .catch((error) => {console.error('Error:', error);
+        });
+    
+    });
+    
+    $('#seek_norm').on('change',function(e){
+    
+        fetch('system/station1/dhs1/playback', {
+            
+            method: 'POST',
+            headers: {
+            'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({ cmd: "seek_norm", par: e.target.value/1000.0 }),
+            
+        })
+        .then(response => response.json())
+        .then(data => {console.log('Success:', data);
+        })
+        .catch((error) => {console.error('Error:', error);
+        });
+    
+    });
+    
+    
+    </script>
+</body> 
+</html>
