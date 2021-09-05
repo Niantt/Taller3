@@ -1,166 +1,204 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script defer src="scripts/alpine.min.js"></script>
-    <link rel="stylesheet" href="css/tailwind.min.css">
-    <title>Spica Project</title>
-    <link rel="icon" type="image/png" href="/resources/img/favicon.ico">
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script defer src="scripts/alpine.min.js"></script>
+  <link rel="stylesheet" href="css/tailwind.min.css">
+  <title>Spica Project</title>
+  <link rel="icon" type="image/png" href="/resources/img/favicon.ico">
 </head>
 <body>
   <div class="relative bg-white overflow-hidden">
-        <div class="max-w-7xl mx-auto">
-          <div class="relative z-10 pb-8 bg-white sm:pb-16 md:pb-20 lg:max-w-2xl lg:w-full lg:pb-28 xl:pb-32">
-            <svg class="hidden lg:block absolute right-0 inset-y-0 h-full w-48 text-white transform translate-x-1/2" fill="currentColor" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true">
-              <polygon points="50,0 100,0 50,100 0,100" />
-            </svg>
-    
+    <div class="max-w-7xl mx-auto">
+      <div class="relative z-10 pb-8 bg-white sm:pb-16 md:pb-20 lg:max-w-2xl lg:w-full lg:pb-28 xl:pb-32">
+        <svg class="hidden lg:block absolute right-0 inset-y-0 h-full w-48 text-white transform translate-x-1/2"
+          fill="currentColor" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true">
+          <polygon points="50,0 100,0 50,100 0,100" />
+        </svg>
+        <!-- Header -->
         <div>
-            <div class="relative pt-6 px-4 sm:px-6 lg:px-8">
-                <nav class="relative flex items-center justify-between sm:h-10 lg:justify-start" aria-label="Global">
-                  <div class="flex items-center flex-grow flex-shrink-0 lg:flex-grow-0">
-                    <div class="flex items-center justify-between w-full md:w-auto">
-                      <a href="#">
-                        <span class="sr-only">Workflow</span>
-                        <img class="h-8 w-auto sm:h-10" src="resources/img/favicon.ico">
-                      </a>
-                      <div class="-mr-2 flex items-center md:hidden">
-                        <button type="button" class="bg-white rounded-md p-2 inline-flex items-center justify-center text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500" aria-expanded="false">
-                          <span class="sr-only">Abre el menu</span>
-                          <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
-                          </svg>
-                        </button>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="hidden md:block md:ml-10 md:pr-4 md:space-x-8">
-                    <a href="#" class="font-medium text-gray-500 hover:text-gray-900">Inicio</a>
-                    <a href="#" class="font-medium text-gray-500 hover:text-gray-900">Editor</a>
-                  </div>
-                </nav> 
-        </div>
-        <main class="mt-10 mx-auto max-w-7x1 px-4 sm:mt-12 sm:px-6 md:mt-16 lg:mt-20 lg:px-8 xl:mt-28">
-            <div class="sm:text-center lg:text-left">
-                <h1 class="text-2xl tracking-tight font-extrabold text-gray-900 sm:text-5xl md:text-6xl">
-                    <span class="block xl:inline">Obtencion de Datos</span>
-                    <span class="block text-yellow-500 xl:inline">Procesamiento de imagen</span>
-                </h1>
-                <p class="mt-3 text-base text-gray-500 sm:mt-5 sm:text-lg sm:max-w-wxl sm:mx-auto md:mt-5 md:text-xl lg:mx-0">
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero provident voluptas soluta nisi earum aliquid, itaque, quidem odit minus eaque debitis animi mollitia eligendi? Quos eum ex facilis pariatur vitae.
-                </p>
-                <div class="mt-5 sm:mt-8 sm:flex sm:justify-center lg:justify-start">
-                  <div class="rounded-md shadow">
-                    <a href="#" class="w-full items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-white- bg-yellow-500 hover:bg-yellow-700 md:py-4 md:text-lg md:px-10">
-                      Ir al editor
-                    </a>
+          <div
+            class="relative pt-6 px-4 sm:px-6 lg:px-8 border-b-2 border-gray-100 py-6 md:justify-start md:soace-x-10">
+            <nav class="relative flex items-center justify-between sm:h-10 lg:justify-start" aria-label="Global">
+              <div class="flex items-center flex-grow flex-shrink-0 lg:flex-grow-0">
+                <div class="flex items-center justify-between w-full md:w-auto">
+                  <a href="#">
+                    <span class="sr-only">Workflow</span>
+                    <img class="h-8 w-auto sm:h-10" src="resources/img/favicon.ico">
+                  </a>
+                  <div class="-mr-2 flex items-center md:hidden">
+                    <button type="button"
+                      class="bg-white rounded-md p-2 inline-flex items-center justify-center text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500"
+                      aria-expanded="false">
+                      <span class="sr-only">Abre el menu</span>
+                      <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                        stroke="currentColor" aria-hidden="true">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                          d="M4 6h16M4 12h16M4 18h16" />
+                      </svg>
+                    </button>
                   </div>
                 </div>
-            </div>
-        </main>
-      </div>
-    </div>
-    <div class="lg:absolute lg:inset-y-0 lg:right-0 lg:w-1/2">
-      <img class="h-110 w-full object-cover sm:h-110 md:h-110 lg:w-110 lg:h-110" src="resources/img/globos.jpeg" alt="">
-    </div>
-    <!-- Aqui empieza el bloque de descripcion -->
-    <div class="py-12 bg-white">
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="lg:text-center">
-          <h2 class="lg:2xl text-base text-yellow-500 font-semibold tracking-wide uppercase">
-            ¿Quienes somos?
-          </h2>
-          <p class="mt-4 max-w-2xl text-xl text-gray-500 lg:mx-auto">
-            Grupo 3 de Taller de integracion, en el cual debemos desarrollar una interfaz para el manejo de datos de videos, segun sean las necesidades de nuestro cliente
-          </p>
-          <h2 class="text-base text-yellow-500 font-semibold tracking-wide uppercase py-5">
-            ¿Que ofrecemos?
-          </h2>
-          <p class=" max-w-2xl text-xl text-gray-500 lg:mx-auto">Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus sint, placeat numquam officiis corporis sequi laudantium porro architecto fugiat ut sunt quae inventore ducimus minus provident. Mollitia non amet esse.</p>
-        </div>
-      </div>
-      <div class="mt-10">
-        <dl class="space-y-10 md:space-y-0 md:grid md:grid-cols-2 md:gap-x-8 md:gap-y-10">
-          <div class="relative">
-            <dt>
-              <div class="absolute flex items-center justify-center h-12 w-12 rounded-md bg-yellow-500 text-white">
-                <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9" />
-                </svg>
               </div>
-              <p class="ml-16 text-lg leading-6 font-medium text-gray-900">Black-reference</p>
-            </dt>
-            <dd class="mt-2 ml-16 text-base text-gray-500">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto amet cupiditate iste! Placeat tempore, inventore nisi reiciendis magni laboriosam provident nam nulla aperiam. Suscipit repellat molestiae incidunt eum? Tempore, laboriosam.
-            </dd>
+              <div class="hidden md:block md:ml-10 md:pr-4 md:space-x-8">
+                <a href="maqueta.html" class="font-medium text-gray-500 hover:text-gray-900">Inicio</a>
+                <a href="editor.html" class="font-medium text-gray-500 hover:text-gray-900">Editor</a>
+              </div>
+            </nav>
           </div>
-          <div class="relative">
-            <dt>
-              <div class="absolute flex items-center justify-center h-12 w-12 rounded-md bg-yellow-500 text-white">
-                <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 6l3 1m0 0l-3 9a5.002 5.002 0 006.001 0M6 7l3 9M6 7l6-2m6 2l3-1m-3 1l-3 9a5.002 5.002 0 006.001 0M18 7l3 9m-3-9l-6-2m0-2v2m0 16V5m0 16H9m3 0h3" />
-                </svg>
-              </div>
-              <p class="ml-16 text-lg leading-6 font-medium text-gray-900">Gain</p>
-            </dt>
-            <dd class="mt-2 ml-16 text-base text-gray-500">
-              Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dignissimos quisquam tempora temporibus, mollitia iusto blanditiis molestiae harum nisi, minus ullam expedita perspiciatis, recusandae aspernatur nesciunt autem laudantium iste! Autem, illo.
-            </dd>
-          </div>
-          <div class="relative">
-            <dt>
-              <div class="absolute flex items-center justify-center h-12 w-12 rounded-md bg-yellow-500 text-white">
-                <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
-                </svg>
-              </div>
-              <p class="ml-16 text-lg leading-6 font-medium text-gray-900">Shutter</p>
-            </dt>
-            <dd class="mt-2 ml-16 text-base text-gray-500">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum temporibus aut neque illo optio nobis corrupti aspernatur quis quos dignissimos similique vero, nihil ut quas ipsa error? Officia, possimus explicabo.
-            </dd>
-          </div>
-          <div class="relative">
-            <dt>
-              <div class="absolute flex items-center justify-center h-12 w-12 rounded-md bg-yellow-500 text-white">
-                <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 8h10M7 12h4m1 8l-4-4H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-3l-4 4z" />
-                </svg>
-              </div>
-              <p class="ml-16 text-lg leading-6 font-medium text-gray-900">Set Mode</p>
-            </dt>
-            <dd class="mt-2 ml-16 text-base text-gray-500">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt ullam maiores officiis rem blanditiis veritatis asperiores, doloremque exercitationem? Aspernatur minus vitae deleniti? Ratione, ad? Laborum sed aliquam quos quaerat explicabo.
-            </dd>
-          </div>
-        </dl>
-      </div>
-    <!-- Termina el bloque de descripcion -->
-    <!-- bloque final -->
-      <div class="bg-gray-100">
-        <div class="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:py-16 lg:px-8 lg:flex lg:items-center lg:justify-between">
-          <h2 class="text-3xl font-extrabold tracking-tight text-gray-900 sm:text-4xl">
-            <span class="block">¿Tienes dudas?</span>
-            <span class="block text-yellow-500">Contactanos!</span>
-          </h2>
-          <form action="">
-            <div class="mt-8 flex lg:mt-0 lg:flex-shrink-0">
-              <div class="inline-flex rounded-md shadow">
-                <label class="block text-gray-700 text-sm font-bold mb-2" for="mail">
-                  Correo
-                </label>
-                <input class="shadow appearence-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="mail" type="email">
-              </div>
-              <div class="ml-3 inline-flex rounded-md">
-                <button class="bg-blue-700 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" type="button">Enviar</button>
+          <main class="mt-10 mx-auto max-w-7x1 px-4 sm:mt-12 sm:px-6 md:mt-16 lg:mt-20 lg:px-8 xl:mt-28">
+            <div class="sm:text-center lg:text-left">
+              <h1 class="text-2xl tracking-tight font-extrabold text-gray-900 sm:text-5xl md:text-6xl">
+                <span class="block xl:inline">Obtencion de Datos</span>
+                <span class="block text-yellow-500 xl:inline">Procesamiento de imagen</span>
+              </h1>
+              <p
+                class="mt-3 text-base text-gray-500 sm:mt-5 sm:text-lg sm:max-w-wxl sm:mx-auto md:mt-5 md:text-xl lg:mx-0">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero provident voluptas soluta nisi earum
+                aliquid, itaque, quidem odit minus eaque debitis animi mollitia eligendi? Quos eum ex facilis pariatur
+                vitae.
+              </p>
+              <div class="mt-5 sm:mt-8 sm:flex sm:justify-center lg:justify-start">
+                <div class="rounded-md shadow">
+                  <a href="editor.html"
+                    class="w-full items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-white- bg-yellow-500 hover:bg-yellow-700 md:py-4 md:text-lg md:px-10">
+                    Ir al editor
+                  </a>
+                </div>
               </div>
             </div>
-          </form>
+          </main>
         </div>
       </div>
-      <!-- termina el bloque final -->
-  </div>
+      <div class="lg:absolute lg:inset-y-0 lg:right-0 lg:w-1/2">
+        <img class="h-110 w-full object-cover sm:h-110 md:h-110 lg:w-110 lg:h-110" src="resources/img/globos.jpeg"
+          alt="">
+      </div>
+      <!-- Aqui empieza el bloque de descripcion -->
+      <div class="py-2 bg-white px-4">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div class="lg:text-center">
+            <h2 class="lg:2xl text-base text-yellow-500 font-semibold tracking-wide uppercase">
+              ¿Quienes somos?
+            </h2>
+            <p class="mt-4 max-w-2xl text-xl text-gray-500 lg:mx-auto">
+              Grupo 3 de Taller de integracion, en el cual debemos desarrollar una interfaz para el manejo de datos de
+              videos, segun sean las necesidades de nuestro cliente
+            </p>
+            <h2 class="text-base text-yellow-500 font-semibold tracking-wide uppercase py-5">
+              ¿Que ofrecemos?
+            </h2>
+            <p class=" max-w-2xl text-xl text-gray-500 lg:mx-auto">Lorem ipsum dolor sit amet consectetur adipisicing
+              elit. Doloribus sint, placeat numquam officiis corporis sequi laudantium porro architecto fugiat ut sunt
+              quae inventore ducimus minus provident. Mollitia non amet esse.</p>
+          </div>
+
+        </div>
+        <div class="mt-10">
+          <dl class="space-y-10 md:space-y-0 md:grid md:grid-cols-2 md:gap-x-8 md:gap-y-10">
+            <div class="relative">
+              <dt>
+                <div class="absolute flex items-center justify-center h-12 w-12 rounded-md bg-yellow-500 text-white">
+                  <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                    stroke="currentColor" aria-hidden="true">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                      d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9" />
+                  </svg>
+                </div>
+                <p class="ml-16 text-lg leading-6 font-medium text-gray-900">Black-reference</p>
+              </dt>
+              <dd class="mt-2 ml-16 text-base text-gray-500">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto amet cupiditate iste! Placeat tempore,
+                inventore nisi reiciendis magni laboriosam provident nam nulla aperiam. Suscipit repellat molestiae
+                incidunt eum? Tempore, laboriosam.
+              </dd>
+            </div>
+            <div class="relative">
+              <dt>
+                <div class="absolute flex items-center justify-center h-12 w-12 rounded-md bg-yellow-500 text-white">
+                  <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                    stroke="currentColor" aria-hidden="true">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                      d="M3 6l3 1m0 0l-3 9a5.002 5.002 0 006.001 0M6 7l3 9M6 7l6-2m6 2l3-1m-3 1l-3 9a5.002 5.002 0 006.001 0M18 7l3 9m-3-9l-6-2m0-2v2m0 16V5m0 16H9m3 0h3" />
+                  </svg>
+                </div>
+                <p class="ml-16 text-lg leading-6 font-medium text-gray-900">Gain</p>
+              </dt>
+              <dd class="mt-2 ml-16 text-base text-gray-500">
+                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dignissimos quisquam tempora temporibus,
+                mollitia iusto blanditiis molestiae harum nisi, minus ullam expedita perspiciatis, recusandae aspernatur
+                nesciunt autem laudantium iste! Autem, illo.
+              </dd>
+            </div>
+            <div class="relative">
+              <dt>
+                <div class="absolute flex items-center justify-center h-12 w-12 rounded-md bg-yellow-500 text-white">
+                  <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                    stroke="currentColor" aria-hidden="true">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                      d="M13 10V3L4 14h7v7l9-11h-7z" />
+                  </svg>
+                </div>
+                <p class="ml-16 text-lg leading-6 font-medium text-gray-900">Shutter</p>
+              </dt>
+              <dd class="mt-2 ml-16 text-base text-gray-500">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum temporibus aut neque illo optio nobis
+                corrupti aspernatur quis quos dignissimos similique vero, nihil ut quas ipsa error? Officia, possimus
+                explicabo.
+              </dd>
+            </div>
+            <div class="relative">
+              <dt>
+                <div class="absolute flex items-center justify-center h-12 w-12 rounded-md bg-yellow-500 text-white">
+                  <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                    stroke="currentColor" aria-hidden="true">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                      d="M7 8h10M7 12h4m1 8l-4-4H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-3l-4 4z" />
+                  </svg>
+                </div>
+                <p class="ml-16 text-lg leading-6 font-medium text-gray-900">Set Mode</p>
+              </dt>
+              <dd class="mt-2 ml-16 text-base text-gray-500">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt ullam maiores officiis rem blanditiis
+                veritatis asperiores, doloremque exercitationem? Aspernatur minus vitae deleniti? Ratione, ad? Laborum
+                sed aliquam quos quaerat explicabo.
+              </dd>
+            </div>
+          </dl>
+        </div><br>
+        <!-- Termina el bloque de descripcion -->
+        <!-- carousel -->
+
+        <!-- bloque final -->
+        <div class="bg-gray-100">
+          <div class=" mx-auto py-12 px-4 sm:px-6 lg:py-16 lg:px-8  lg:items-center lg:justify-between">
+            <h2 class="text-3xl font-extrabold tracking-tight text-gray-900 sm:text-4xl">
+              <span>¿Tienes dudas?</span>
+              <span class="text-yellow-500">Contactanos!</span>
+            </h2>
+            <form class="w-full max-w-sm px-5 py-2">
+              <div class="mt-8 flex lg:mt-0 lg:flex-shrink-0">
+                <div class="flex items-center border-b border-teal-500 py-2">
+                  <input
+                    class="appearance-none bg-transparent border-none w-full text-gray-700 mr-3 py-1 px-2 leading-tight focus:outline-none"
+                    type="text" placeholder="Email" aria-label="Full name">
+                  <button
+                    class="flex-shrink-0 bg-teal-500 hover:bg-teal-700 border-teal-500 hover:border-teal-700 text-sm border-4 text-black py-1 px-2 rounded"
+                    type="button">
+                    Enviar
+                  </button>
+                </div>
+              </div>
+            </form>
+            <!-- <div class="flex items-stretch w-60">
+            <img class="h-110 w-full object-cover sm:h-110 md:h-110 lg:w-110 lg:h-110" src="resources/img/globos.jpeg" alt="">
+          </div> -->
+          </div>
+        </div>
+        <!-- termina el bloque final -->
+      </div>
 </body>
+
 </html>
