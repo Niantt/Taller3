@@ -20,13 +20,23 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
 
 /***/ }),
 
+/***/ "./src/RemoteControl.js":
+/*!******************************!*\
+  !*** ./src/RemoteControl.js ***!
+  \******************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n function main() {\r\n    return {\r\n        host: 'http://localhost/',\r\n        slug: ['system/station1/dhs1/playback', 'op/sys'],\r\n        saludo: (host)=>{\r\n            alert(host)\r\n        },\r\n        senddata: (cmd,par,slug,host) => {\r\n            \r\n            let data = JSON.stringify({ cmd, par})\r\n            console.log(data)\r\n           \r\n            fetch(host+slug, {\r\n\r\n                method: 'POST',\r\n                headers: {\r\n\r\n                    'Access-Control-Allow-Headers': 'Content-Type, Authorization',\r\n                    'Access-Control-Allow-Origin': 'http://127.0.0.1:5500',\r\n                    'Access-Control-Allow-Methods': 'POST',\r\n                    'Content-Type': 'application/json'\r\n\r\n                },\r\n                mode: \"no-cors\",\r\n                body: data,\r\n\r\n            })\r\n                .then(response => response.json())\r\n                .then(data => {\r\n                    console.log('Success:', data);\r\n                })\r\n                .catch((error) => {\r\n                    console.log('Error:', error);\r\n                });\r\n\r\n        }\r\n\r\n    }\r\n}\r\n\r\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (main);\n\n//# sourceURL=webpack://Taller3/./src/RemoteControl.js?");
+
+/***/ }),
+
 /***/ "./src/index.js":
 /*!**********************!*\
   !*** ./src/index.js ***!
   \**********************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var alpinejs__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! alpinejs */ \"./node_modules/alpinejs/dist/module.esm.js\");\n\r\nwindow.Alpine = alpinejs__WEBPACK_IMPORTED_MODULE_0__[\"default\"];\r\nqueueMicrotask(() => {\r\n    alpinejs__WEBPACK_IMPORTED_MODULE_0__[\"default\"].start()\r\n});\r\n\r\n\n\n//# sourceURL=webpack://Taller3/./src/index.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var alpinejs__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! alpinejs */ \"./node_modules/alpinejs/dist/module.esm.js\");\n/* harmony import */ var _RemoteControl__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./RemoteControl */ \"./src/RemoteControl.js\");\n\r\nwindow.Alpine = alpinejs__WEBPACK_IMPORTED_MODULE_0__[\"default\"];\r\nqueueMicrotask(() => {\r\n    alpinejs__WEBPACK_IMPORTED_MODULE_0__[\"default\"].start()\r\n});\r\n\r\n\r\nwindow.main = _RemoteControl__WEBPACK_IMPORTED_MODULE_1__[\"default\"];\r\n\n\n//# sourceURL=webpack://Taller3/./src/index.js?");
 
 /***/ })
 
