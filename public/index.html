@@ -1,16 +1,63 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="app.css">
+    <script src="index.js" defer></script>
 </head>
+
 <body>
-   <div class="" x-data="{nombre: 'diego'}">
-       <p x-text="nombre"></p>
-   </div>
-   <script src="index.js"></script>
+    <div class="border border-gray-100 w-5/6 mx-auto" x-data="main()">
+        <div class="flex justify-between">
+            <a @click="senddata('play','',slug[0],host)" class="btn-primary">Play</a>
+            <a @click="senddata('stop','',slug[0],host)"class="btn-primary">Stop</a>
+        </div>
+
+    </div>
+    <script>
+        function main() {
+            return {
+                host: 'http://localhost/',
+                slug: ['system/station1/dhs1/playback', 'op/sys'],
+                saludo: (host)=>{
+                    alert(host)
+                },
+                senddata: (cmd,par,slug,host) => {
+                    data = JSON.stringify({ cmd, par})
+                    console.log(data)
+                   
+                    fetch(host+slug, {
+
+                        method: 'POST',
+                        headers: {
+
+                            'Access-Control-Allow-Headers': 'Content-Type, Authorization',
+                            'Access-Control-Allow-Origin': 'http://127.0.0.1:5500',
+                            'Access-Control-Allow-Methods': 'POST',
+                            'Content-Type': 'application/json'
+
+                        },
+                        mode: "no-cors",
+                        body: data,
+
+                    })
+                        .then(response => response.json())
+                        .then(data => {
+                            console.log('Success:', data);
+                        })
+                        .catch((error) => {
+                            console.log('Error:', error);
+                        });
+
+                }
+
+            }
+        }
+    </script>
 </body>
+
 </html>

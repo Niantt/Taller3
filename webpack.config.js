@@ -2,7 +2,7 @@ module.exports = {
     entry: {
         app: './src/index.js',
       },
-      mode: 'production',
+      mode: 'development',
       output: {
         filename: 'index.js',
         path: __dirname + '/public',
