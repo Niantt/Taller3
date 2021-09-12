@@ -1,10 +1,7 @@
- function main() {
+function main() {
     return {
         host: 'http://localhost/',
-        slug: ['system/station1/dhs1/playback', 'op/sys'],
-        saludo: (host)=>{
-            alert(host)
-        },
+        slug: ['system/station1/dhs1/playback','system/station1/dhs1', 'op/sys'],
         senddata: (cmd,par,slug,host) => {
             
             let data = JSON.stringify({ cmd, par})
@@ -39,3 +36,4 @@
 }
 
 export default main;
+
