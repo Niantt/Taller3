@@ -1,74 +1,102 @@
 <!DOCTYPE html>
-<html lang="es">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>stDHS</title>
     <link rel="stylesheet" href="app.css">
     <script src="index.js" defer></script>
 </head>
 
-<body>
-    <!--NavBar-->
-    <div class="navbar-p">
-       <nav class="nav1">
-           <div class="navbar-p2">
-               <div class="navbar-p3">
-                   <a href="#">
-                       <img class="img-nav" src="/public/img/favicon.ico" alt="">
-                   </a>
-               </div>
-            <div class="btn-nav">
-                <a href="maqueta.html" class="a-navp">Inicio</a>
-                <a href="index.html" class="a-navp">Editor</a>
-            </div>
-           </div>
-       </nav>
-    </div>
-    <!--Body-->
+<body class="body" x-data="{open: false}">
+    <nav
+        class="absolute inset-0 transform lg:transform-none lg:opacity-100 duration-200 lg:relative z-10 w-80 bg-indigo-900 text-white h-screen p-3"
+        :class="{'translate-x-0 ease-in opacity-100':open === true, '-translate-x-full ease-out opacity-0': open === false}"
+    >    <!--Sidebar menu-->
+        <div class="flex justify-between">
+            <span class="span">Menú</span>
+            <button
+                class="p-2 focus:outline-none focus:bg-indigo-800 hover:bg-indigo-800 rounded-md lg:hidden"
+                @click="open = false">
 
-
-    <div class="bodyp">
-        <!--menu izquierda-->
-        <div class="menuizq">
-            <span>Menu</span>
+                <!--Icons from heroicons-->
+                <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    class="h-6 w-6"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor">
+                    <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        d="M15 19l-7-7 7-7"/>
+                </svg>
+            </button>
         </div>
-        <!--video-->
-        <div class="videop">
-            <div class="border border-gray-100 w-5/6 mx-auto" x-data="main()"><h4>Device Mode</h4>
-                <a @click="senddata('mode','setup',slug[1],host)" class="btn-primary">Setup</a>
-                <a @click="senddata('mode','record',slug[1],host)" class="btn-primary">Record</a>
-                <a @click="senddata('mode','playback',slug[1],host)" class="btn-primary">Playback</a>
-            </div>  
+            <!--Menu items-->
+        <ul class="mt-8">
+            <li>
+                <a href="#" class="nav">Home</a>
+                <a href="#" class="nav">About</a>
+                <a href="#" class="nav">Option3</a>
+            </li>
+        </ul>
+    </nav>
+    <div class="relative z-0 lg:flex-grow">
+        <header class="flex bg-indigo-800 text-white items-center px-3 ">
+            <div>
+                <!--Navbar image-->
+                <img class="image" src="/public/img/favicon.ico">
+            </div>
             
-            <div class="border border-gray-100 w-5/6 mx-auto" x-data="main()"><h4>Playback</h4>
-                    <a @click="senddata('play','',slug[0],host)" class="btn-primary">Play</a>
-                    <a @click="senddata('stop','',slug[0],host)" class="btn-primary">Stop</a>
-                    <a @click="senddata('first','',slug[0],host)" class="btn-primary">First frame</a>
-                    <a @click="senddata('prev','',slug[0],host)" class="btn-primary">Prev frame</a>
-                    <a @click="senddata('next','',slug[0],host)" class="btn-primary">Next frame </a>
-                    <a @click="senddata('last','',slug[0],host)" class="btn-primary">Last frame</a>
-                    <a @click="senddata('terminate','',slug[2],host)" class="btn-primary">Terminar</a>
-            </div>
-                <div class="border border-gray-100 w-5/6 mx-auto" x-data="main()"><h4>Seek normalized</h4>
-                </div>      
+            <button
+                class="p-2 focus:outline-none focus:bg-gray-600 hover:bg-gray-600 rounded-md lg:hidden"
+                @click="open = true">
+                    <!--Icons from heroicons-->
+                <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    class="h-6 w-6"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor">
+                    <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        d="M4 6h16M4 12h16M4 18h16"/>
+                </svg>
+            </button>
+            <span class="span">Spica Technology</span>
+        </header>
+        <!--Where magic happens-->
+        <div class="videop">
+            <div class="divs" x-data="main()"><h4>Device Mode</h4>
+            <a @click="senddata('mode','setup',slug[1],host)" class="btn-primary">Setup</a>
+            <a @click="senddata('mode','record',slug[1],host)" class="btn-primary">Record</a>
+            <a @click="senddata('mode','playback',slug[1],host)" class="btn-primary">Playback</a>
         </div>
-        <!--botones-->
-        <div class="btn-options">
+        <div class="divs" x-data="main()"><h4>Playback</h4>
+            <a @click="senddata('play','',slug[0],host)" class="btn-primary">Play</a>
+            <a @click="senddata('stop','',slug[0],host)" class="btn-primary">Stop</a>
+            <a @click="senddata('first','',slug[0],host)" class="btn-primary">First frame</a>
+            <a @click="senddata('prev','',slug[0],host)" class="btn-primary">Prev frame</a>
+            <a @click="senddata('next','',slug[0],host)" class="btn-primary">Next frame </a>
+            <a @click="senddata('last','',slug[0],host)" class="btn-primary">Last frame</a>
+            <a @click="senddata('terminate','',slug[2],host)" class="btn-primary">Terminar</a>
+        </div>
+        <div class="divs" x-data="main()"><h4>Seek normalized</h4>
+            <a class="btn-primary"> Seek</a>
+        </div>
+        <div class="divs">
             <p>Black reference</p>
             <select name="" id="" class="appearence-focus">
                 <option value="">option1</option>
                 <option value="">option2</option>
                 <option value="">option3</option>
             </select>
-        </div>
-
-            
-    <script>
-        
-    </script>
+        </div>  
+    </div>           
 </body>
-
 </html>
