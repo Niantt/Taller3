@@ -33,4 +33,9 @@
 .body{
     @apply antialiased min-h-screen lg:flex;
 }
-
+.dropdown{
+    @apply block px-4 py-2 mt-2 text-sm font-semibold  rounded-lg  md:mt-0 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none;
+}
+.mode{
+    @apply px-2 py-2 bg-indigo-800 rounded-md;
+}

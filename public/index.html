@@ -40,7 +40,23 @@
             <li>
                 <a href="#" class="nav">Home</a>
                 <a href="#" class="nav">About</a>
-                <a href="#" class="nav">Option3</a>
+                <div @click.away="open = false" class="relative" x-data="{ open: false }">
+                    <button @click="open = !open" class="flex flex-row items-center w-full px-4 py-2 mt-2 text-sm font-semibold text-left rounded-lg ">
+                      <span>Select mode</span>
+                    </button>
+                    <div x-show="open" 
+                        x-transition:enter="transition ease-out duration-100" 
+                        x-transition:enter-start="transform opacity-0 scale-95" 
+                        x-transition:enter-end="transform opacity-100 scale-100" 
+                        x-transition:leave="transition ease-in duration-75" 
+                        x-transition:leave-start="transform opacity-100 scale-100" 
+                        x-transition:leave-end="transform opacity-0 scale-95" 
+                        x-data="main()">
+                      <div class="mode">
+                        <a @click="senddata('play','',slug[0],host)" class="dropdown">Playback</a>
+                        <a @click="senddata('mode','setup',slug[1],host)" class="dropdown">Setup</a>
+                        <a @click="senddata('mode','record',slug[1],host)" class="dropdown">Record</a>
+                      </div>
             </li>
         </ul>
     </nav>
