@@ -1,0 +1,35 @@
+{
+  "name": "Taller3",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "css": "npx tailwindcss build -i src/styles.css -o public/app.css",
+    "js": "npx webpack"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Niantt/Taller3.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Niantt/Taller3/issues"
+  },
+  "homepage": "https://github.com/Niantt/Taller3#readme",
+  "dependencies": {
+    "alpinejs": "^3.3.2",
+    "autoprefixer": "^10.3.4",
+    "webpack": "^5.52.0"
+  },
+  "devDependencies": {
+    "css-loader": "^6.2.0",
+    "postcss-cli": "^8.3.1",
+    "postcss-loader": "^6.1.1",
+    "style-loader": "^3.2.1",
+    "tailwindcss": "^2.2.11",
+    "webpack-cli": "^4.8.0"
+  }
+}
