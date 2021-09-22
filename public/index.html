@@ -54,8 +54,10 @@
                         x-data="main()">
                       <div class="mode">
                         <a @click="senddata('play','',slug[0],host)" class="dropdown">Playback</a>
+                        <a @click="senddata('stop','',slug[0],host)" class="dropdown">Stop</a>
                         <a @click="senddata('mode','setup',slug[1],host)" class="dropdown">Setup</a>
                         <a @click="senddata('mode','record',slug[1],host)" class="dropdown">Record</a>
+                        
                       </div>
             </li>
         </ul>
