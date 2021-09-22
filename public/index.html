@@ -10,10 +10,10 @@
 </head>
 
 <body class="body" x-data="{open: false}">
+    <!--Sidebar menu-->
     <nav
-        class="absolute inset-0 transform lg:transform-none lg:opacity-100 duration-200 lg:relative z-10 w-80 bg-indigo-900 text-white h-screen p-3"
-        :class="{'translate-x-0 ease-in opacity-100':open === true, '-translate-x-full ease-out opacity-0': open === false}"
-    >    <!--Sidebar menu-->
+        class="absolute inset-0 transform lg:transform-none lg:opacity-100 duration-200 lg:relative z-10 w-60 bg-indigo-900 text-white h-screen p-3"
+        :class="{'translate-x-0 ease-in opacity-100':open === true, '-translate-x-full ease-out opacity-0': open === false}">   
         <div class="flex justify-between">
             <span class="span">Menú</span>
             <button
@@ -41,7 +41,7 @@
                 <a href="#" class="nav">Home</a>
                 <a href="#" class="nav">About</a>
                 <div @click.away="open = false" class="relative" x-data="{ open: false }">
-                    <button @click="open = !open" class="flex flex-row items-center w-full px-4 py-2 mt-2 text-sm font-semibold text-left rounded-lg ">
+                    <button @click="open = !open" class="flex flex-row items-center w-full px-4 py-2 mt-2 text-sm font-bold text-left rounded-lg ">
                       <span>Select mode</span>
                     </button>
                     <div x-show="open" 
