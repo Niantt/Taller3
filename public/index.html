@@ -88,12 +88,12 @@
             </button>
             <span class="span">Spica Technology</span>
         </header>
-        <!--Where magic happens-->
         <div class="videop">
             <div class="divs" x-data="main()"><h4>Device Mode</h4>
             <a @click="senddata('mode','setup',slug[1],host)" class="btn-primary">Setup</a>
             <a @click="senddata('mode','record',slug[1],host)" class="btn-primary">Record</a>
             <a @click="senddata('mode','playback',slug[1],host)" class="btn-primary">Playback</a>
+            
         </div>
         <div class="divs" x-data="main()"><h4>Playback</h4>
             <a @click="senddata('play','',slug[0],host)" class="btn-primary">Play</a>
@@ -107,14 +107,43 @@
         <div class="divs" x-data="main()"><h4>Seek normalized</h4>
             <a class="btn-primary"> Seek</a>
         </div>
-        <div class="divs">
-            <p>Black reference</p>
-            <select name="" id="" class="appearence-focus">
-                <option value="">option1</option>
-                <option value="">option2</option>
-                <option value="">option3</option>
-            </select>
-        </div>  
-    </div>           
+        <div class="text-center absolute inset-x-0 bottom-0 bottom bg-purple-900 w-auto h-auto ">
+            <div class="grid grid-cols-3 block bg-purple-700 m-4 text-white w-auto h-auto rounded-3xl">
+                <span>
+                    Framerate:
+                    <span class="bg-purple-500 text-white">
+                        Placeholder 
+                    </span>
+                </span>
+                <span>Exposure:
+                    <span class="bg-purple-500 text-white">
+                    Placeholder 
+                </span>
+            </span>
+                <span>Shutter:
+                    <span class="bg-purple-500 text-white">
+                    Placeholder 
+                </span>
+            </span>
+            </div>
+            <div class="grid grid-cols-3 block bg-purple-700 m-4 text-white w-auto h-auto rounded-3xl">
+                <span>Gain:
+                    <span class="bg-purple-500 text-white">
+                    Placeholder 
+                </span>
+            </span>
+                <span>Whitebalance:
+                    <span class="bg-purple-500 text-white">
+                    Placeholder 
+                </span>
+            </span>
+            <span>Black-reference:
+                <span class="bg-purple-500 text-white">
+                Placeholder 
+            </span>
+        </span>
+            </div>
+        </div>
+    </div>
 </body>
 </html>
