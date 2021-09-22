@@ -24,6 +24,12 @@
 .span{
     @apply block text-2xl sm:text-3xl font-bold p-4;
 }
+.span2{
+    @apply block text-base sm:text-3xl font-bold p-4;
+}
+.options{
+    @apply mx-10 bg-yellow-300 my-4
+}
 .image{
     @apply h-20 w-full object-cover md:h-full md:w-20;
 }
