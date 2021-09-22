@@ -102,10 +102,10 @@
             <a @click="senddata('prev','',slug[0],host)" class="btn-primary">Prev frame</a>
             <a @click="senddata('next','',slug[0],host)" class="btn-primary">Next frame </a>
             <a @click="senddata('last','',slug[0],host)" class="btn-primary">Last frame</a>
-            <a @click="senddata('terminate','',slug[2],host)" class="btn-primary">Terminar</a>
+            <a @click="senddata('terminate','',slug[2],host)" class="btn-primary">Terminate</a>
         </div>
         <div class="divs" x-data="main()"><h4>Seek normalized</h4>
-            <a class="btn-primary"> Seek</a>
+            <input class= "w-full" type= "range"  min="0" max="1000" @input="senddata('seek_norm',$event.target.value/1000.0,slug[0],host)">
         </div>
         <div class="divs">
             <p>Black reference</p>
