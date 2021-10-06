@@ -29,9 +29,7 @@ function main() {
                 .catch((error) => {
                     console.log('Error:', error);
                 });
-
         }
-
     }
 }
 
