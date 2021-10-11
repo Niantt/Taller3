@@ -57,7 +57,6 @@
                         <a @click="senddata('stop','',slug[0],host)" class="dropdown">Stop</a>
                         <a @click="senddata('mode','setup',slug[1],host)" class="dropdown">Setup</a>
                         <a @click="senddata('mode','record',slug[1],host)" class="dropdown">Record</a>
-                        
                       </div>
             </li>
         </ul>
@@ -103,11 +102,12 @@
             <a @click="senddata('next','',slug[0],host)" class="btn-primary">Next frame </a>
             <a @click="senddata('last','',slug[0],host)" class="btn-primary">Last frame</a>
             <a @click="senddata('terminate','',slug[2],host)" class="btn-primary">Terminate</a>
+            <a @click="senddata('info','',slug[1],host)" class="btn-primary">info</a>
         </div>
         <div class="divs" x-data="main()"><h4>Seek normalized</h4>
             <input class= "w-full" type= "range"  min="0" max="1000" @input="senddata('seek_norm',$event.target.value/1000.0,slug[0],host)">
         </div>
-        <div class="text-center fixed bottom-0 right-0 bg-purple-900 w-full h-auto ">
+        <div class="text-center fixed bottom-0 right-0 bg-purple-900 xl:w-5/6 w-full h-auto ">
             <div class="grid grid-cols-3 block bg-purple-700 m-4 text-white w-auto h-auto rounded-3xl">
                 <span>
                     Framerate:
