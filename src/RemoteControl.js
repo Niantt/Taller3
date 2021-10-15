@@ -29,9 +29,52 @@ function main() {
                 .catch((error) => {
                     console.log('Error:', error);
                 });
-        }
-    }
+        },
+        selectedOption:"",
+        variable:"",
+        options:[
+            {
+                value:"system/station1/dhs1",
+                text:"Estacion 1",
+            },
+            {
+                value:'system/station2/dhs1',
+                text:'Estacion 2',
+            },
+        ],
+        access(){
+            this.$refs.output.innerText = this.selectedOption;
+            this.variable = this.$refs.output.innerText
+            console.log(this.variable)
+            return this.variable
+            
+        },
+    };
 }
+// function page(){
+//     return {
+//         selectedOption:"",
+//         variable:"",
+//         options:[
+//             {
+//                 value:"system/station1/dhs1",
+//                 text:"Estacion 1",
+//             },
+//             {
+//                 value:'system/station2/dhs1',
+//                 text:'Estadion 2',
+//             },
+//         ],
+//         access(){
+//             this.$refs.output.innerText = this.selectedOption;
+//             this.variable = this.$refs.output.innerText
+//             console.log(this.variable)
+//             return this.variable
+            
+//         },
+//     };
+// }
 
-export default main;
+
+export  {main};
 
