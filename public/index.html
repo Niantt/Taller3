@@ -87,14 +87,14 @@
             </button>
             <span class="span">Spica Technology</span>
         </header>
-        <div class="videop">
+        <!-- <div class="videop">
             <div class="divs" x-data="main()"><h4>Device Mode</h4>
             <a @click="senddata('mode','setup',slug[1],host)" class="btn-primary">Setup</a>
             <a @click="senddata('mode','record',slug[1],host)" class="btn-primary">Record</a>
             <a @click="senddata('mode','playback',slug[1],host)" class="btn-primary">Playback</a>
             
-        </div>
-        <div class="divs" x-data="main()"><h4>Playback</h4>
+        </div> -->
+        <!-- <div class="divs" x-data="main()"><h4>Playback</h4>
             <a @click="senddata('play','',slug[0],host)" class="btn-primary">Play</a>
             <a @click="senddata('stop','',slug[0],host)" class="btn-primary">Stop</a>
             <a @click="senddata('first','',slug[0],host)" class="btn-primary">First frame</a>
@@ -103,34 +103,39 @@
             <a @click="senddata('last','',slug[0],host)" class="btn-primary">Last frame</a>
             <a @click="senddata('terminate','',slug[2],host)" class="btn-primary">Terminate</a>
             <a @click="senddata('info','',slug[1],host)" class="btn-primary">info</a>
+        </div> -->
+        <div x-ref="demo" class="flex w-full md:w-1/7 items-start p-4 md:p-10 justify-center bg-gray-300 md:h-full overflow-y-scroll">
+            
+            <div x-data="main()" >
+                <h3 class="text-xl font-semibold text-gray-900 mb-8">
+                    Elegir estacion
+                </h3>
+                <div>
+                    <select x-model="selectedOption" class="inline-block w-full appearance-none bg-white border border-gray-400 hover:border-gray-500 px-4 py-2 pr-8 rounded shadow leading-tight focus:outline-none focus:shadow-outline">
+                        <option value="">Select an option</option>
+                        <template x-for="option in options">
+                    <option :key="option.value" :value="option.value" x-text="option.text"></option>
+                </template>
+                
+            </select>
+            <button @click="access()" class="mt-4 w-full bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+                  Elegir
+                </button>
+                <button @click="senddata('mode','playback',access(),host)" class="mt-4 w-full bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" >Playback</button>
+                <button @click="senddata('mode','record',access(),host)" class="mt-4 w-full bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Record</button>
+                <button @click="senddata('play','',access()+'/playback',host)" class="btn-primary" >Play</button>
+                <button @click="senddata('stop','',access()+'/playback',host)" class="btn-primary">Stop</button>
+                <button @click="senddata('first','',access()+'/playback',host)" class="btn-primary" >First frame</button>
+                <button @click="senddata('prev','',access()+'/playback',host)"  class="btn-primary">Prev frame</button>
+                <button @click="senddata('next','',access()+'/playback',host)"  class="btn-primary">Next frame</button>
+                <button @click="senddata('last','',access()+'/playback',host)"  class="btn-primary">Last Frame</button>
+                <button @click="senddata('terminate','',slug[2],host)" class="btn-primary">Terminate</button>
+            </div>
+            <label class="block">Estacion: "<span x-ref="output"></span>"</label>
         </div>
         <div class="divs" x-data="main()"><h4>Seek normalized</h4>
             <input class= "w-full" type= "range"  min="0" max="1000" @input="senddata('seek_norm',$event.target.value/1000.0,slug[0],host)">
         </div>
-        <div x-ref="demo" class="flex w-full md:w-1/2 items-start p-4 md:p-10 justify-center bg-gray-300 md:h-full overflow-y-scroll">
-          
-            <div x-data="main()" class="flex flex-col">
-              <h3 class="text-xl font-semibold text-gray-900 mb-8">
-                Elegir estacion
-              </h3>
-              <div class="flex flex-col w-full md:w-2/3">
-                <select x-model="selectedOption" class="inline-block w-full appearance-none bg-white border border-gray-400 hover:border-gray-500 px-4 py-2 pr-8 rounded shadow leading-tight focus:outline-none focus:shadow-outline">
-                  <option value="">Select an option</option>
-                  <template x-for="option in options">
-                    <option :key="option.value" :value="option.value" x-text="option.text"></option>
-                  </template>
-                
-                  </select>
-                <button @click="access()" class="mt-4 w-full bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
-                  Elegir
-                </button>
-                <button @click="senddata('mode','playback',access(),host)" class="mt-4 w-full bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" >Playback</button>
-                <button @click="senddata('mode','record','system/station2/dhs1',host)" class="mt-4 w-full bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">record estacion 2</button>
-              </div>
-              <label class="block">Estacion: "<span x-ref="output"></span>"</label>
-            </div>
-            
-                    </div>
         <div class="text-center fixed bottom-0 right-0 bg-purple-900 xl:w-5/6 w-full h-auto ">
             <div class="grid grid-cols-3 block bg-purple-700 m-4 text-white w-auto h-auto rounded-3xl">
                 <span>

@@ -41,6 +41,39 @@ function main() {
                 value:'system/station2/dhs1',
                 text:'Estacion 2',
             },
+            {
+                value:'system/station3/dhs1',
+                text:'Estacion 3',
+            },
+            {
+                value:'system/station4/dhs1',
+                text:'Estacion 4',
+            },
+            {
+                value:'system/station5/dhs1',
+                text:'Estacion 5',
+            },
+            {
+                value:'system/station6/dhs1',
+                text:'Estacion 6',
+            },
+            {
+                value:'system/station7/dhs1',
+                text:'Estacion 7',
+            },
+            {
+                value:'system/station8/dhs1',
+                text:'Estacion 8',
+            },
+            {
+                value:'system/station9/dhs1',
+                text:'Estacion 9',
+            },
+            {
+                value:'system/station10/dhs1',
+                text:'Estacion 10',
+            },
+            
         ],
         access(){
             this.$refs.output.innerText = this.selectedOption;
