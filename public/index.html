@@ -115,28 +115,48 @@
                         <option value="">Select an option</option>
                         <template x-for="option in options">
                     <option :key="option.value" :value="option.value" x-text="option.text"></option>
-                </template>
+                        </template>
                 
-            </select>
-            <button @click="access()" class="mt-4 w-full bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
-                  Elegir
-                </button>
-                <button @click="senddata('mode','playback',access(),host)" class="mt-4 w-full bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" >Playback</button>
-                <button @click="senddata('mode','record',access(),host)" class="mt-4 w-full bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Record</button>
-                <button @click="senddata('play','',access()+'/playback',host)" class="btn-primary" >Play</button>
-                <button @click="senddata('stop','',access()+'/playback',host)" class="btn-primary">Stop</button>
-                <button @click="senddata('first','',access()+'/playback',host)" class="btn-primary" >First frame</button>
-                <button @click="senddata('prev','',access()+'/playback',host)"  class="btn-primary">Prev frame</button>
-                <button @click="senddata('next','',access()+'/playback',host)"  class="btn-primary">Next frame</button>
-                <button @click="senddata('last','',access()+'/playback',host)"  class="btn-primary">Last Frame</button>
-                <button @click="senddata('terminate','',slug[2],host)" class="btn-primary">Terminate</button>
+                    </select>
+                    <button @click="access()" class="mt-4 w-full bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+                        Elegir
+                    </button>
+                    <button @click="senddata('mode','playback',access(),host)" class="mt-4 w-full bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" >Playback</button>
+                    <button @click="senddata('mode','record',access(),host)" class="mt-4 w-full bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Record</button>
+                    <button @click="senddata('mode','setup',access(),host)" class="mt-4 w-full bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Setup </button>
+                    <button @click="senddata('play','',access()+'/playback',host)" class="btn-primary" >Play</button>
+                    <button @click="senddata('stop','',access()+'/playback',host)" class="btn-primary">Stop</button>
+                    <button @click="senddata('first','',access()+'/playback',host)" class="btn-primary" >First frame</button>
+                    <button @click="senddata('prev','',access()+'/playback',host)"  class="btn-primary">Prev frame</button>
+                    <button @click="senddata('next','',access()+'/playback',host)"  class="btn-primary">Next frame</button>
+                    <button @click="senddata('last','',access()+'/playback',host)"  class="btn-primary">Last Frame</button>
+                    <button @click="senddata('terminate','',slug[2],host)" class="btn-primary">Terminate</button>
+                </div>
+                
             </div>
-            <label class="block">Estacion: "<span x-ref="output"></span>"</label>
-        </div>
-        <div class="divs" x-data="main()"><h4>Seek normalized</h4>
-            <input class= "w-full" type= "range"  min="0" max="1000" @input="senddata('seek_norm',$event.target.value/1000.0,slug[0],host)">
-        </div>
-        <div class="text-center fixed bottom-0 right-0 bg-purple-900 xl:w-5/6 w-full h-auto ">
+            <div class="divs" x-data="main()"><h4>Seek normalized</h4>
+                <label for="video">Station1</label>
+                <input class= "w-full" type= "range"  min="0" max="1000" @input="senddata('seek_norm',$event.target.value/1000.0,station[0],host)">
+                <label for="video">Station2</label>
+                <input class= "w-full" type= "range"  min="0" max="1000" @input="senddata('seek_norm',$event.target.value/1000.0,station[1],host)">
+                <label for="video">Station3</label>
+                <input class= "w-full" type= "range"  min="0" max="1000" @input="senddata('seek_norm',$event.target.value/1000.0,station[2],host)">
+                <label for="video">Station4</label>
+                <input class= "w-full" type= "range"  min="0" max="1000" @input="senddata('seek_norm',$event.target.value/1000.0,station[3],host)">
+                <label for="video">Station5</label>
+                <input class= "w-full" type= "range"  min="0" max="1000" @input="senddata('seek_norm',$event.target.value/1000.0,station[4],host)">
+                <label for="video">Station6</label>
+                <input class= "w-full" type= "range"  min="0" max="1000" @input="senddata('seek_norm',$event.target.value/1000.0,station[5],host)">
+                <label for="video">Station7</label>
+                <input class= "w-full" type= "range"  min="0" max="1000" @input="senddata('seek_norm',$event.target.value/1000.0,station[6],host)">
+                <label for="video">Station8</label>
+                <input class= "w-full" type= "range"  min="0" max="1000" @input="senddata('seek_norm',$event.target.value/1000.0,station[7],host)">
+                <label for="video">Station9</label>
+                <input class= "w-full" type= "range"  min="0" max="1000" @input="senddata('seek_norm',$event.target.value/1000.0,station[8],host)">
+                <label for="video">Station10</label>
+                <input class= "w-full" type= "range"  min="0" max="1000" @input="senddata('seek_norm',$event.target.value/1000.0,station[9],host)">     
+            </div>
+            <div class="text-center fixed bottom-0 right-0 bg-purple-900 xl:w-5/6 w-full h-auto ">
             <div class="grid grid-cols-3 block bg-purple-700 m-4 text-white w-auto h-auto rounded-3xl">
                 <span>
                     Framerate:

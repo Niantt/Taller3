@@ -34,7 +34,7 @@ function main() {
         variable:"",
         options:[
             {
-                value:"system/station1/dhs1",
+                value:'system/station1/dhs1',
                 text:"Estacion 1",
             },
             {
@@ -75,9 +75,10 @@ function main() {
             },
             
         ],
+        station: ['system/station1/dhs1/playback','system/station2/dhs1/playback','system/station3/dhs1/playback','system/station4/dhs1/playback','system/station5/dhs1/playback',
+                'system/station6/dhs1/playback', 'system/station7/dhs1/playback', 'system/station8/dhs1/playback','system/station9/dhs1/playback','system/station10/dhs1/playback'],
         access(){
-            this.$refs.output.innerText = this.selectedOption;
-            this.variable = this.$refs.output.innerText
+            this.variable = this.selectedOption;
             console.log(this.variable)
             return this.variable
             
