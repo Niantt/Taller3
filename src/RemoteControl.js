@@ -34,13 +34,8 @@ function main() {
         variable:"",
         options:[
             {
-<<<<<<< HEAD
                 value:"system/station1/dhs1",
                 text:"Station 1",
-=======
-                value:'system/station1/dhs1',
-                text:"Estacion 1",
->>>>>>> 1e310839df0c221281bb82f5383588c7f2692efe
             },
             {
                 value:'system/station2/dhs1',
