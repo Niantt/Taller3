@@ -66,13 +66,17 @@
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
                 </svg>
             </button>
-            <span class="span">Spica Technology</span>
+            <div class="flex flex-col"> 
+              <span class="text-lg font-black max-h-4 ">Spica</span> 
+              <span class="text-lg font-black max-h-5">Technology</span> 
+              <span class="text-xs tracking-widest ">Corporation</span> 
+            </div>
         </header>
 
         <div x-ref="demo"
             class="flex w-full md:w-1/7 items-start p-4 md:p-10 justify-center bg-gray-300 md:h-full overflow-y-scroll">
 
-            <div x-data="main()">
+            <div x-data="main()" display="flex-col">
                 <h3 class="text-xl font-semibold text-gray-900 mb-8">
                     Elegir estacion
                 </h3>
@@ -85,132 +89,91 @@
                         </template>
 
                     </select>
-                    <button @click="access()"
-                        class="mt-4 w-full bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
-                        Elegir
-                    </button>
-                    <button @click="senddata('mode','playback',access(),host)"
-                        class="mt-4 w-full bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Playback</button>
-                    <button @click="senddata('mode','record',access(),host)"
-                        class="mt-4 w-full bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Record</button>
-                    <button @click="senddata('mode','setup',access(),host)"
-                        class="mt-4 w-full bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Setup
-                    </button>
-                    <button @click="senddata('play','',access()+'/playback',host)" class="btn-primary">Play</button>
-                    <button @click="senddata('stop','',access()+'/playback',host)" class="btn-primary">Stop</button>
-                    <button @click="senddata('first','',access()+'/playback',host)" class="btn-primary">First
-                        frame</button>
-                    <button @click="senddata('prev',chFrames(),access()+'/playback',host)" class="btn-primary">Prev
-                        frame</button>
-                    <button @click="senddata('next',chFrames(),access()+'/playback',host)" class="btn-primary">Next
-                        frame</button>
-                    <button @click="senddata('last','',access()+'/playback',host)" class="btn-primary">Last
-                        Frame</button>
-                    <button @click="senddata('terminate','',slug[2],host)" class="btn-primary">Terminate</button>
+                    <div align="center">
+                        <button @click="senddata('mode','playback',access(),host)" class="btn_main lblstation" >Playback</button>
+                        <button @click="senddata('mode','record',access(),host)" class="btn_main lblstation">Record</button>
+                        <button @click="senddata('mode','setup',access(),host)" class="btn_main lblstation">Setup </button>
+                    </div>
+                    <div align="center"> 
+                        <button @click="senddata('play','',access()+'/playback',host)" class="btn-primary lblstation" >Play</button>
+                        <button @click="senddata('stop','',access()+'/playback',host)" class="btn-primary lblstation">Stop</button>
+                        <button @click="senddata('first','',access()+'/playback',host)" class="btn-primary lblstation" >First frame</button>
+                        <button @click="senddata('prev',chFrames(),access()+'/playback',host)"  class="btn-primary lblstation">Prev frame</button>
+                        <button @click="senddata('next',chFrames(),access()+'/playback',host)"  class="btn-primary lblstation">Next frame</button>
+                        <button @click="senddata('last','',access()+'/playback',host)"  class="btn-primary lblstation">Last Frame</button>    
+                    </div>
+                    <div align="center">
+                        <button @click="senddata('terminate','',slug[2],host)" class="btn-secondary">Terminate</button>
+                    </div>
+                    <div align="center" class="space-y-4 space-x-4">
+                        <label class="lblstation">Frame</label>
                     <div>
                         <input type="text" id="inputFrames">
                     </div>
                 </div>
 
                 <div class="divs">
-                    <h4>Seek normalized</h4>
+                    <h4 class="lblstation" align="center">Seek normalized</h4>
                     <div x-show="show == 1" class="">
-                        <label for="video">Station1</label>
-                        <input class="w-full" type="range" min="0" max="1000"
-                            @input="senddata('seek_norm',$event.target.value/1000.0,station[0],host)">
+                        <label class="lblstation" for="video">Station1</label>
+                        <input class="w-full bg-green-500" type="range" min="0" max="7500"
+                            @input="senddata('seek_norm',$event.target.value/7500.0,station[0],host)">
                     </div>
                     <div x-show="show == 2" class="">
-                        <label for="video">Station2</label>
-                        <input class="w-full" type="range" min="0" max="1000"
-                            @input="senddata('seek_norm',$event.target.value/1000.0,station[1],host)">
+                        <label class="lblstation" for="video">Station2</label>
+                        <input class="w-full" type="range" min="0" max="7500"
+                            @input="senddata('seek_norm',$event.target.value/7500.0,station[1],host)">
                     </div>
 
                     <div x-show="show == 3"  class="">
-                        <label for="video">Station3</label>
-                        <input class="w-full" type="range" min="0" max="1000"
-                            @input="senddata('seek_norm',$event.target.value/1000.0,station[2],host)">
+                        <label class="lblstation" for="video">Station3</label>
+                        <input class="w-full" type="range" min="0" max="7500"
+                            @input="senddata('seek_norm',$event.target.value/7500.0,station[2],host)">
                     </div>
 
                     <div x-show="show == 4" class="">
-                        <label for="video">Station4</label>
-                        <input class="w-full" type="range" min="0" max="1000"
-                            @input="senddata('seek_norm',$event.target.value/1000.0,station[3],host)">
+                        <label class="lblstation" for="video">Station4</label>
+                        <input class="w-full" type="range" min="0" max="7500"
+                            @input="senddata('seek_norm',$event.target.value/7500.0,station[3],host)">
                     </div>
 
                     <div x-show="show == 5"  class="">
-                        <label for="video">Station5</label>
-                        <input class="w-full" type="range" min="0" max="1000"
-                            @input="senddata('seek_norm',$event.target.value/1000.0,station[4],host)">
+                        <label class="lblstation" for="video">Station5</label>
+                        <input class="w-full" type="range" min="0" max="7500"
+                            @input="senddata('seek_norm',$event.target.value/7500.0,station[4],host)">
                     </div>
 
                     <div x-show="show == 6"  class="">
-                        <label for="video">Station6</label>
-                        <input class="w-full" type="range" min="0" max="1000"
-                            @input="senddata('seek_norm',$event.target.value/1000.0,station[5],host)">
+                        <label class="lblstation" for="video">Station6</label>
+                        <input class="w-full" type="range" min="0" max="7500"
+                            @input="senddata('seek_norm',$event.target.value/7500.0,station[5],host)">
                     </div>
 
                     <div x-show="show == 7" class="">
 
-                        <label for="video">Station7</label>
-                        <input class="w-full" type="range" min="0" max="1000"
-                            @input="senddata('seek_norm',$event.target.value/1000.0,station[6],host)">
+                        <label class="lblstation" for="video">Station7</label>
+                        <input class="w-full" type="range" min="0" max="7500"
+                            @input="senddata('seek_norm',$event.target.value/7500.0,station[6],host)">
                     </div>
 
                     <div x-show="show == 8"  class="">
-                        <label for="video">Station8</label>
-                        <input class="w-full" type="range" min="0" max="1000"
-                            @input="senddata('seek_norm',$event.target.value/1000.0,station[7],host)">
+                        <label class="lblstation" for="video">Station8</label>
+                        <input class="w-full" type="range" min="0" max="7500"
+                            @input="senddata('seek_norm',$event.target.value/7500.0,station[7],host)">
                     </div>
 
                     <div x-show="show == 9"  class="">
-                        <label for="video">Station9</label>
-                        <input class="w-full" type="range" min="0" max="1000"
-                            @input="senddata('seek_norm',$event.target.value/1000.0,station[8],host)">
+                        <label class="lblstation" for="video">Station9</label>
+                        <input class="w-full" type="range" min="0" max="7500"
+                            @input="senddata('seek_norm',$event.target.value/7500.0,station[8],host)">
                     </div>
                   
                     <div x-show="show == 10" class="">
-                        <label for="video">Station10</label>
-                        <input class="w-full" type="range" min="0" max="1000"
-                            @input="senddata('seek_norm',$event.target.value/1000.0,station[9],host)">
+                        <label class="lblstation" for="video">Station10</label>
+                        <input class="w-full" type="range" min="0" max="7500"
+                            @input="senddata('seek_norm',$event.target.value/7500.0,station[9],host)">
                     </div>
           
-                </div>
-            </div>
-            <div class="text-center fixed bottom-0 right-0 bg-purple-900 xl:w-5/6 w-full h-auto ">
-                <div class="grid grid-cols-3 block bg-purple-700 m-4 text-white w-auto h-auto rounded-3xl">
-                    <span>
-                        Framerate:
-                        <span class="bg-purple-500 text-white">
-                            Placeholder
-                        </span>
-                    </span>
-                    <span>Exposure:
-                        <span class="bg-purple-500 text-white">
-                            Placeholder
-                        </span>
-                    </span>
-                    <span>Shutter:
-                        <span class="bg-purple-500 text-white">
-                            Placeholder
-                        </span>
-                    </span>
-                </div>
-                <div class="grid grid-cols-3 block bg-purple-700 m-4 text-white w-auto h-auto rounded-3xl">
-                    <span>Gain:
-                        <span class="bg-purple-500 text-white">
-                            Placeholder
-                        </span>
-                    </span>
-                    <span>Whitebalance:
-                        <span class="bg-purple-500 text-white">
-                            Placeholder
-                        </span>
-                    </span>
-                    <span>Black-reference:
-                        <span class="bg-purple-500 text-white">
-                            Placeholder
-                        </span>
-                    </span>
                 </div>
             </div>
         </div>

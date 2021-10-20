@@ -2,46 +2,54 @@
 @tailwind components;
 @tailwind utilities;
 
-.btn-primary{
-    @apply py-0 px-4 bg-green-500 text-white rounded hover:bg-green-300;
+.btn_main {
+  @apply transition duration-500 ease-in-out mt-4 w-auto bg-yellow-500 hover:bg-yellow-700 text-white font-bold py-2 px-4 rounded space-x-3 space-y-4 transform hover:-translate-y-1 hover:scale-110;
 }
-.btn-nav{
-    @apply hidden md:block md:ml-10 md:pr-4 md:space-x-8;
+.btn-primary {
+  @apply transition duration-500 ease-in-out mt-4 py-2 px-4 bg-green-500 text-white rounded hover:bg-green-300 space-x-3 space-y-4 transform hover:-translate-y-1 hover:scale-110;
 }
-
-.menuizq{
-    @apply absolute inset-0 transform lg:relative z-10 w-48 bg-indigo-900 text-white h-screen p-3;
+.btn-secondary {
+  @apply transition duration-500 ease-in-out mt-4 py-2 px-4 bg-red-500 text-white rounded hover:bg-red-300 space-x-3 space-y-4 transform hover:-translate-y-1 hover:scale-110;
 }
-.videop{
-    @apply justify-items-center block text-2xl sm:text-2xl font-bold p-3;
+.btn-nav {
+  @apply hidden md:block md:ml-10 md:pr-4 md:space-x-8;
 }
-.btn-options{
-    @apply row-span-2 col-span-2 bg-yellow-100;
+.lblstation {
+  @apply font-serif;
 }
-.nav{
-    @apply block px-4 py-2 hover:bg-indigo-800 rounded-md;
+.menuizq {
+  @apply absolute inset-0 transform lg:relative z-10 w-48 bg-indigo-900 text-white h-screen p-3;
 }
-.span{
-    @apply block text-2xl sm:text-3xl font-bold p-4;
+.videop {
+  @apply justify-items-center block text-2xl sm:text-2xl font-bold p-3;
 }
-.span2{
-    @apply block text-base sm:text-3xl font-bold p-4;
+.btn-options {
+  @apply row-span-2 col-span-2 bg-yellow-100;
 }
-.options{
-    @apply mx-10 bg-yellow-300 my-4
+.nav {
+  @apply block px-4 py-2 hover:bg-indigo-800 rounded-md;
 }
-.image{
-    @apply h-20 w-full object-cover md:h-full md:w-20;
+.span {
+  @apply block text-2xl sm:text-3xl font-bold p-4;
 }
-.divs{
-    @apply md:container md:mx-auto;
+.span2 {
+  @apply block text-base sm:text-3xl font-bold p-4;
 }
-.body{
-    @apply antialiased min-h-screen lg:flex;
+.options {
+  @apply mx-10 bg-yellow-300 my-4;
 }
-.dropdown{
-    @apply block px-4 py-2 mt-2 text-sm font-semibold  rounded-lg  md:mt-0 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none;
+.image {
+  @apply h-20 w-full object-cover md:h-full md:w-20;
 }
-.mode{
-    @apply px-2 py-2 bg-indigo-800 rounded-md;
+.divs {
+  @apply md:container md:mx-auto;
+}
+.body {
+  @apply antialiased min-h-screen lg:flex;
+}
+.dropdown {
+  @apply block px-4 py-2 mt-2 text-sm font-semibold  rounded-lg  md:mt-0 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none;
+}
+.mode {
+  @apply px-2 py-2 bg-indigo-800 rounded-md;
 }
