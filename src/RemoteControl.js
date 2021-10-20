@@ -32,6 +32,7 @@ function main() {
         },
         selectedOption:"",
         variable:"",
+        show: 1,
         options:[
             {
                 value:"system/station1/dhs1",
