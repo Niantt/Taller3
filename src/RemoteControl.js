@@ -83,6 +83,11 @@ function main() {
             return this.variable
             
         },
+        chFrames(){
+            let frame = document.getElementById('inputFrames').value
+            console.log(frame)
+            return frame
+        },
     };
 }
 

@@ -98,7 +98,7 @@
                     <select x-model="selectedOption" class="inline-block w-full appearance-none bg-white border border-gray-400 hover:border-gray-500 px-4 py-2 pr-8 rounded shadow leading-tight focus:outline-none focus:shadow-outline">
                         <option value="">Select an option</option>
                         <template x-for="option in options">
-                    <option :key="option.value" :value="option.value" x-text="option.text"></option>
+                            <option :key="option.value" :value="option.value" x-text="option.text"></option>
                         </template>
                 
                     </select>
@@ -111,10 +111,13 @@
                     <button @click="senddata('play','',access()+'/playback',host)" class="btn-primary" >Play</button>
                     <button @click="senddata('stop','',access()+'/playback',host)" class="btn-primary">Stop</button>
                     <button @click="senddata('first','',access()+'/playback',host)" class="btn-primary" >First frame</button>
-                    <button @click="senddata('prev','',access()+'/playback',host)"  class="btn-primary">Prev frame</button>
-                    <button @click="senddata('next','',access()+'/playback',host)"  class="btn-primary">Next frame</button>
+                    <button @click="senddata('prev',chFrames(),access()+'/playback',host)"  class="btn-primary">Prev frame</button>
+                    <button @click="senddata('next',chFrames(),access()+'/playback',host)"  class="btn-primary">Next frame</button>
                     <button @click="senddata('last','',access()+'/playback',host)"  class="btn-primary">Last Frame</button>
                     <button @click="senddata('terminate','',slug[2],host)" class="btn-primary">Terminate</button>
+                    <div>
+                        <input type="text" id="inputFrames">
+                    </div>
                 </div>
                 
             </div>
