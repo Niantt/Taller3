@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>stDHS</title>
+    <link rel="stylesheet" href="app.css">
+    <script src="index.js" defer></script>
+</head>
+
+<body class="body" x-data="{open: false}">
+    <!--Sidebar menu-->
+    <nav class="absolute inset-0 transform lg:transform-none lg:opacity-100 duration-200 lg:relative z-10 w-60 bg-indigo-900 text-white h-screen p-3"
+        :class="{'translate-x-0 ease-in opacity-100':open === true, '-translate-x-full ease-out opacity-0': open === false}">
+        <div class="flex justify-between">
+            <span class="span">Menú</span>
+            <button class="p-2 focus:outline-none focus:bg-indigo-800 hover:bg-indigo-800 rounded-md lg:hidden"
+                @click="open = false">
+
+                <!--Icons from heroicons-->
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
+                    stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+                </svg>
+            </button>
+        </div>
+        <!--Menu items-->
+        <ul class="mt-8">
+            <li>
+                <a href="#" class="nav">Home</a>
+                <a href="#" class="nav">About</a>
+                <div @click.away="open = false" class="relative" x-data="{ open: false }">
+                    <button @click="open = !open"
+                        class="flex flex-row items-center w-full px-4 py-2 mt-2 text-sm font-bold text-left rounded-lg ">
+                        <span>Select mode</span>
+                    </button>
+                    <div x-show="open" x-transition:enter="transition ease-out duration-100"
+                        x-transition:enter-start="transform opacity-0 scale-95"
+                        x-transition:enter-end="transform opacity-100 scale-100"
+                        x-transition:leave="transition ease-in duration-75"
+                        x-transition:leave-start="transform opacity-100 scale-100"
+                        x-transition:leave-end="transform opacity-0 scale-95" x-data="main()">
+                        <div class="mode">
+                            <a @click="senddata('play','',slug[0],host)" class="dropdown">Playback</a>
+                            <a @click="senddata('stop','',slug[0],host)" class="dropdown">Stop</a>
+                            <a @click="senddata('mode','setup',slug[1],host)" class="dropdown">Setup</a>
+                            <a @click="senddata('mode','record',slug[1],host)" class="dropdown">Record</a>
+                        </div>
+            </li>
+        </ul>
+    </nav>
+    <div class="relative z-0 lg:flex-grow">
+        <header class="flex bg-indigo-800 text-white items-center px-3 ">
+            <div>
+                <!--Navbar image-->
+                <img class="image" src="/public/img/favicon.ico">
+            </div>
+
+            <button class="p-2 focus:outline-none focus:bg-gray-600 hover:bg-gray-600 rounded-md lg:hidden"
+                @click="open = true">
+                <!--Icons from heroicons-->
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
+                    stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                </svg>
+            </button>
+            <div class="flex flex-col"> 
+              <span class="text-lg font-black max-h-4 ">Spica</span> 
+              <span class="text-lg font-black max-h-5">Technology</span> 
+              <span class="text-xs tracking-widest ">Corporation</span> 
+            </div>
+        </header>
+
+        <div x-ref="demo"
+            class="flex w-full md:w-1/7 items-start p-4 md:p-10 justify-center bg-gray-300 md:h-full overflow-y-scroll">
+
+            <div x-data="main()" display="flex-col">
+                <h3 class="text-xl font-semibold text-gray-900 mb-8">
+                    Elegir estacion
+                </h3>
+                <div>
+                    <select x-model="selectedOption" x-model="show" @change="show=$el.selectedIndex"
+                        class="inline-block w-full appearance-none bg-white border border-gray-400 hover:border-gray-500 px-4 py-2 pr-8 rounded shadow leading-tight focus:outline-none focus:shadow-outline">
+                        <option value="">Select an option</option>
+                        <template x-for="option in options">
+                            <option :key="option.value" :value="option.value" x-text="option.text"></option>
+                        </template>
+
+                    </select>
+                    <div align="center">
+                        <button @click="senddata('mode','playback',access(),host)" class="btn_main lblstation" >Playback</button>
+                        <button @click="senddata('mode','record',access(),host)" class="btn_main lblstation">Record</button>
+                        <button @click="senddata('mode','setup',access(),host)" class="btn_main lblstation">Setup </button>
+                    </div>
+                    <div align="center"> 
+                        <button @click="senddata('play','',access()+'/playback',host)" class="btn-primary lblstation" >Play</button>
+                        <button @click="senddata('stop','',access()+'/playback',host)" class="btn-primary lblstation">Stop</button>
+                        <button @click="senddata('first','',access()+'/playback',host)" class="btn-primary lblstation" >First frame</button>
+                        <button @click="senddata('prev',chFrames(),access()+'/playback',host)"  class="btn-primary lblstation">Prev frame</button>
+                        <button @click="senddata('next',chFrames(),access()+'/playback',host)"  class="btn-primary lblstation">Next frame</button>
+                        <button @click="senddata('last','',access()+'/playback',host)"  class="btn-primary lblstation">Last Frame</button>    
+                    </div>
+                    <div align="center">
+                        <button @click="senddata('terminate','',slug[2],host)" class="btn-secondary">Terminate</button>
+                    </div>
+                    <div align="center" class="space-y-4 space-x-4">
+                        <label class="lblstation">Frame</label>
+                    <div>
+                        <input type="text" id="inputFrames">
+                    </div>
+                </div>
+
+                <div class="divs">
+                    <h4 class="lblstation" align="center">Seek normalized</h4>
+                    <div x-show="show == 1" class="">
+                        <label class="lblstation" for="video">Station1</label>
+                        <input class="w-full bg-green-500" type="range" min="0" max="7500"
+                            @input="senddata('seek_norm',$event.target.value/7500.0,station[0],host)">
+                    </div>
+                    <div x-show="show == 2" class="">
+                        <label class="lblstation" for="video">Station2</label>
+                        <input class="w-full" type="range" min="0" max="7500"
+                            @input="senddata('seek_norm',$event.target.value/7500.0,station[1],host)">
+                    </div>
+
+                    <div x-show="show == 3"  class="">
+                        <label class="lblstation" for="video">Station3</label>
+                        <input class="w-full" type="range" min="0" max="7500"
+                            @input="senddata('seek_norm',$event.target.value/7500.0,station[2],host)">
+                    </div>
+
+                    <div x-show="show == 4" class="">
+                        <label class="lblstation" for="video">Station4</label>
+                        <input class="w-full" type="range" min="0" max="7500"
+                            @input="senddata('seek_norm',$event.target.value/7500.0,station[3],host)">
+                    </div>
+
+                    <div x-show="show == 5"  class="">
+                        <label class="lblstation" for="video">Station5</label>
+                        <input class="w-full" type="range" min="0" max="7500"
+                            @input="senddata('seek_norm',$event.target.value/7500.0,station[4],host)">
+                    </div>
+
+                    <div x-show="show == 6"  class="">
+                        <label class="lblstation" for="video">Station6</label>
+                        <input class="w-full" type="range" min="0" max="7500"
+                            @input="senddata('seek_norm',$event.target.value/7500.0,station[5],host)">
+                    </div>
+
+                    <div x-show="show == 7" class="">
+
+                        <label class="lblstation" for="video">Station7</label>
+                        <input class="w-full" type="range" min="0" max="7500"
+                            @input="senddata('seek_norm',$event.target.value/7500.0,station[6],host)">
+                    </div>
+
+                    <div x-show="show == 8"  class="">
+                        <label class="lblstation" for="video">Station8</label>
+                        <input class="w-full" type="range" min="0" max="7500"
+                            @input="senddata('seek_norm',$event.target.value/7500.0,station[7],host)">
+                    </div>
+
+                    <div x-show="show == 9"  class="">
+                        <label class="lblstation" for="video">Station9</label>
+                        <input class="w-full" type="range" min="0" max="7500"
+                            @input="senddata('seek_norm',$event.target.value/7500.0,station[8],host)">
+                    </div>
+                  
+                    <div x-show="show == 10" class="">
+                        <label class="lblstation" for="video">Station10</label>
+                        <input class="w-full" type="range" min="0" max="7500"
+                            @input="senddata('seek_norm',$event.target.value/7500.0,station[9],host)">
+                    </div>
+          
+                </div>
+            </div>
+        </div>
+</body>
+
+</html>
