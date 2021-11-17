@@ -3,19 +3,22 @@
 @tailwind utilities;
 
 .btn_main {
-  @apply transition duration-500 ease-in-out mt-4 w-auto bg-yellow-500 hover:bg-yellow-700 text-white font-bold py-2 px-4 rounded space-x-3 space-y-4 transform hover:-translate-y-1 hover:scale-110;
+  @apply transition duration-500 ease-in-out mt-1 w-auto bg-yellow-500 hover:bg-yellow-700 text-white font-bold py-2 px-4 
+  rounded space-x-3 space-y-4 transform hover:-translate-y-1 hover:scale-110;
 }
 .btn-primary {
-  @apply transition duration-500 ease-in-out mt-4 py-2 px-4 bg-green-500 text-white rounded hover:bg-green-300 space-x-3 space-y-4 transform hover:-translate-y-1 hover:scale-110;
+  @apply transition duration-500 ease-in-out mt-1 mr-4 py-5 px-5 hover:bg-transparent space-x-6 space-y-6 
+  transform hover:-translate-y-1 hover:scale-110 bg-contain bg-center;
 }
 .btn-secondary {
-  @apply transition duration-500 ease-in-out mt-4 py-2 px-4 bg-red-500 text-white rounded hover:bg-red-300 space-x-3 space-y-4 transform hover:-translate-y-1 hover:scale-110;
+  @apply transition duration-500 ease-in-out mt-4 py-2 px-4 bg-red-500 text-white rounded hover:bg-red-300 space-x-3 space-y-4 
+  transform hover:-translate-y-1 hover:scale-110;
 }
 .btn-nav {
   @apply hidden md:block md:ml-10 md:pr-4 md:space-x-8;
 }
 .lblstation {
-  @apply font-serif;
+  @apply font-serif text-center;
 }
 .menuizq {
   @apply absolute inset-0 transform lg:relative z-10 w-48 bg-indigo-900 text-white h-screen p-3;
@@ -41,11 +44,11 @@
 .image {
   @apply h-20 w-full object-cover md:h-full md:w-20;
 }
-.divs {
-  @apply md:container md:mx-auto;
+.divnorm {
+  @apply container relative w-auto h-auto bg-gray-300 p-4 border-4;
 }
 .body {
-  @apply antialiased min-h-screen lg:flex;
+  @apply bg-indigo-800 antialiased min-h-screen lg:flex;
 }
 .dropdown {
   @apply block px-4 py-2 mt-2 text-sm font-semibold  rounded-lg  md:mt-0 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none;
