@@ -10,11 +10,16 @@
     <script src="index.js" defer></script>
     <script>
         function imag() {
+            
+            var imagediv = document.getElementById('gamediv')
+            imagediv.innerHTML=""
             var img = document.createElement('img');
-            img.src = 'http://127.0.0.1/system/station1/dhs1/image';
+            img.src = 'http://127.0.0.1/system/station1/dhs1/image?overlay';
             img.width = "640"
             img.height = "320"
-            document.getElementById('gamediv').appendChild(img)
+            img.align = "center"
+            imagediv.appendChild(img)
+            return imagediv
         }
     </script>
 </head>
