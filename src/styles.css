@@ -18,16 +18,20 @@
   @apply hidden md:block md:ml-10 md:pr-4 md:space-x-8;
 }
 .lblstation {
-  @apply font-serif text-center;
+  @apply font-serif text-center text-white;
 }
 .menuizq {
-  @apply absolute inset-0 transform lg:relative z-10 w-48 bg-indigo-900 text-white h-screen p-3;
+  @apply absolute inset-0 transform lg:relative z-10 w-48 bg-yellow-900 text-white h-screen p-3;
 }
 .videop {
   @apply justify-items-center block text-2xl sm:text-2xl font-bold p-3;
 }
 .btn-options {
   @apply row-span-2 col-span-2 bg-yellow-100;
+}
+.select {
+  @apply inline-block w-auto pointer-events-auto bg-gray-400 rounded border-gray-400 animate-pulse select-text hover:border-gray-500 px-4 py-2 pr-8 rounded 
+  leading-tight focus:outline-none;
 }
 .nav {
   @apply block px-4 py-2 hover:bg-indigo-800 rounded-md;
@@ -45,10 +49,10 @@
   @apply h-20 w-full object-cover md:h-full md:w-20;
 }
 .divnorm {
-  @apply container relative w-auto h-auto bg-gray-300 p-4 border-4;
+  @apply container relative w-auto h-auto p-4;
 }
 .body {
-  @apply bg-indigo-800 antialiased min-h-screen lg:flex;
+  @apply bg-gray-800 antialiased min-h-screen lg:flex;
 }
 .dropdown {
   @apply block px-4 py-2 mt-2 text-sm font-semibold  rounded-lg  md:mt-0 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none;

@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="app.css">
     <script src="index.js" defer></script>
     <script>
-        boole=1
+         boole=1
         function imag() {
             var imagediv = document.getElementById('gamediv')
             imagediv.innerHTML=""
@@ -36,11 +36,11 @@
 
 <body class="body" x-data="{open: false}">
     <!--Sidebar menu-->
-    <nav class="absolute inset-0 transform lg:transform-none lg:opacity-100 duration-200 lg:relative z-10 w-60 bg-indigo-900 text-white h-screen p-3"
+    <nav class="absolute inset-0 transform lg:transform-none lg:opacity-100 duration-200 lg:relative z-10 w-60 bg-gray-900 text-white h-screen p-3"
         :class="{'translate-x-0 ease-in opacity-100':open === true, '-translate-x-full ease-out opacity-0': open === false}">
         <div class="flex justify-between">
             <span class="span">Menú</span>
-            <button class="p-2 focus:outline-none focus:bg-indigo-800 hover:bg-indigo-800 rounded-md lg:hidden"
+            <button class="p-2 focus:outline-none focus:bg-gray-900 hover:bg-gray-700 rounded-md lg:hidden"
                 @click="open = false">
 
                 <!--Icons from heroicons-->
@@ -77,7 +77,7 @@
         </ul>
     </nav>
     <div class="relative  flex-grow">
-        <header class="flex bg-indigo-800 text-white items-center px-3 ">
+        <header class="flex bg-gray-900 text-white items-center px-3 ">
             <div>
                 <!--Navbar image-->
                 <img class="image" src="/public/img/favicon.ico">
@@ -103,14 +103,14 @@
 
             <div x-data="main()" display="flex-col" class="container static mx-6 my-6">
                 <div class="container mx-0 my-0">
-                    <h3 class="text-xl font-semibold text-gray-900 mb-8 text-right">
+                    <h3 class="text-xl font-semibold text-white mb-8 text-right">
                         Choose Station
                     </h3>
                 </div>
                 <div class="flex-row mx-0 my-0 relative">
                     <div class="container relative text-right">
                         <select x-model="selectedOption" x-model="show" @change="show=$el.selectedIndex"
-                            class="inline-block w-auto pointer-events-auto bg-white border border-gray-400 hover:border-gray-500 px-4 py-2 pr-8 rounded shadow leading-tight focus:outline-none focus:shadow-outline">
+                            class="select focus:outline-none focus:shadow-outline">
                             <option value="" class="pointer-events-auto">Select an option</option>
                             <template x-for="option in options">
                                 <option :key="option.value" :value="option.value" x-text="option.text"></option>
@@ -123,9 +123,9 @@
                             <button @click="senddata('mode','playback',access(),host)" class="btn_main lblstation" >Playback</button>      
                             <button @click="senddata('mode','record',access(),host)" class="btn_main lblstation">Record</button>     
                             <button @click="senddata('mode','setup',access(),host)" class="btn_main lblstation">Setup </button>
-                            <button onclick="imag()" class="btn_main">Img</button>      
+                            <button onclick="imag()" class="btn_main">Frame</button>      
                         </div>
-                        <div id="gamediv" class="container content-center w-screen h-96 p-8 bg-black"></div>           
+                        <div id="gamediv" class="container content-center w-2/4 h-96 p-8 bg-black"></div>             
                         <div class="text-center">
                             <button @click="senddata('first','',access()+'/playback',host)" class="btn-primary" style="background-image: url('/public/img/previous.png') "></button>
                             <button @click="senddata('prev',chFrames(),access()+'/playback',host)"  class="btn-primary" style="background-image: url('/public/img/first.png')"></button>
@@ -137,18 +137,21 @@
                     </div>
                     <div class="relative text-center my-4">
                         <div>
-                            <label class="lblstation">Frame</label>
+                            <label class="lblstation text-white">Frame</label>
                         </div>
                         <div>
-                            <input type="text" id="inputFrames" class="bg-yellow-100 shadow-sm shadow-inner backdrop-opacity-20">
+                            <input type="text" id="inputFrames" class="bg-yellow-100 focus:outline-none focus:ring focus:border-blue-300 rounded">
                         </div>
                     </div>
+                    <div class="my-4">
+                        <button @click="senddata('terminate','',slug[2],host)" class="btn-secondary">Terminate</button>
+                    </div>
 
-                    <div class="divnorm text-center">
+                    <div class="divnorm text-center rounded">
                         <h4 class="lblstation" >Seek normalized</h4>
                         <div x-show="show == 1" class="">
-                            <label class="lblstation" for="video">Station1</label>
-                            <input class="w-full bg-green-500 inline-block" type="range" min="0" max="7500"
+                            <label class="lblstation text-white" for="video">Station1</label>
+                            <input class="w-full bg-blue-900 inline-block" type="range" min="0" max="7500"
                                 @input="senddata('seek_norm',$event.target.value/7500.0,station[0],host)">
                         </div>
                         <div x-show="show == 2" class="">
