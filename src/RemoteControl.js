@@ -89,8 +89,62 @@ function main() {
             console.log(frame)
             return frame
         },
+        crearimg(){
+            const img = document.querySelector("#containerimg")
+            img.innerHTML = null
+            img.innerHTML = document.createElement("img")
+            img.src = "http://127.0.0.1/system/station1/dhs1/image"
+            img.width = "640"
+            img.height = "320"
+            return img
+        }
     };
 }
+var outside;
+var url = 'http://127.0.0.1/system/station1/dhs1/image'
+function image(){
+    fetch(url,{
 
-export  {main};
+        method: 'GET',
+        headers: {
+
+            'Access-Control-Allow-Headers': 'Content-Type, Authorization',
+            'Access-Control-Allow-Origin': 'http://127.0.0.1:5501',
+            'Access-Control-Allow-Methods': 'GET',
+            'Content-Type': 'application/json'
+
+        },
+        mode: "no-cors"
+
+    })
+    .then(response => response.blob())
+    .then(images => {
+        outside = URL.createObjectURL(images)
+        console.log(outside)
+    })
+}
+
+function image2(){
+    fetch(url,{
+        method:'GET',
+        headers: {
+
+            'Access-Control-Allow-Headers': 'Content-Type, Authorization',
+            'Access-Control-Allow-Origin': 'http://127.0.0.1:5501',
+            'Access-Control-Allow-Methods': 'GET',
+            'Content-Type': 'application/json'
+        },
+        mode:"no-cors"
+    })
+    .then(response => response.blob())
+    .then(myBlob => {
+        var urlCreator = window.URL || window.webkitURL;
+        var imageUrl = urlCreator.createObjectURL(myBlob);
+        const myImgElem = document.getElementById('image')
+        myImgElem.src = imageUrl
+    })
+
+}
+
+export  {main,image,image2};
 

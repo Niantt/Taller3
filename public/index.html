@@ -77,6 +77,9 @@
             class="flex w-full md:w-1/7 items-start p-4 md:p-10 justify-center bg-gray-300 md:h-full overflow-y-scroll">
 
             <div x-data="main()" display="flex-col">
+                <div id="containerimg">
+                    <button @click="senddata('','',crearimg(),host)">Img</button>
+                </div>
                 <h3 class="text-xl font-semibold text-gray-900 mb-8">
                     Elegir estacion
                 </h3>
@@ -176,6 +179,12 @@
           
                 </div>
             </div>
+        </div>
+        <div id="image">
+            <p>Imagenxd</p>
+        </div>
+        <div>
+            <button @click='image2()'>click</button>
         </div>
 </body>
 
