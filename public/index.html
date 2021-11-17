@@ -75,6 +75,38 @@
         </header>
 
         <div x-ref="demo"
+<<<<<<< HEAD
+            class="flex w-full md:w-1/7 items-start p-4 md:p-10 justify-center bg-gray-300 md:h-full overflow-y-scroll">
+
+            <div x-data="main()" display="flex-col">
+                <div id="containerimg">
+                    <button @click="senddata('','',crearimg(),host)">Img</button>
+                </div>
+                <h3 class="text-xl font-semibold text-gray-900 mb-8">
+                    Elegir estacion
+                </h3>
+                <div>
+                    <select x-model="selectedOption" x-model="show" @change="show=$el.selectedIndex"
+                        class="inline-block w-full appearance-none bg-white border border-gray-400 hover:border-gray-500 px-4 py-2 pr-8 rounded shadow leading-tight focus:outline-none focus:shadow-outline">
+                        <option value="">Select an option</option>
+                        <template x-for="option in options">
+                            <option :key="option.value" :value="option.value" x-text="option.text"></option>
+                        </template>
+
+                    </select>
+                    <div align="center">
+                        <button @click="senddata('mode','playback',access(),host)" class="btn_main lblstation" >Playback</button>
+                        <button @click="senddata('mode','record',access(),host)" class="btn_main lblstation">Record</button>
+                        <button @click="senddata('mode','setup',access(),host)" class="btn_main lblstation">Setup </button>
+                    </div>
+                    <div align="center"> 
+                        <button @click="senddata('play','',access()+'/playback',host)" class="btn-primary lblstation" >Play</button>
+                        <button @click="senddata('stop','',access()+'/playback',host)" class="btn-primary lblstation">Stop</button>
+                        <button @click="senddata('first','',access()+'/playback',host)" class="btn-primary lblstation" >First frame</button>
+                        <button @click="senddata('prev',chFrames(),access()+'/playback',host)"  class="btn-primary lblstation">Prev frame</button>
+                        <button @click="senddata('next',chFrames(),access()+'/playback',host)"  class="btn-primary lblstation">Next frame</button>
+                        <button @click="senddata('last','',access()+'/playback',host)"  class="btn-primary lblstation">Last Frame</button>    
+=======
             class="container mx-auto my-auto">
 
             <div x-data="main()" display="flex-col" class="container static mx-6 my-6">
@@ -93,6 +125,7 @@
                             </template>
                         
                         </select>
+>>>>>>> 8e310a2ddc48cdcbe87c70d862b584924a799497
                     </div>
                     <div class="static">
                         <div class="flex-col h-10 my-6">
@@ -184,7 +217,16 @@
                 </div>
             </div>
         </div>
+<<<<<<< HEAD
+        <div id="image">
+            <p>Imagenxd</p>
+        </div>
+        <div>
+            <button @click='image2()'>click</button>
+        </div>
+=======
     </div>
+>>>>>>> 8e310a2ddc48cdcbe87c70d862b584924a799497
 </body>
 
 </html>

@@ -3,8 +3,9 @@ window.Alpine = Alpine;
 queueMicrotask(() => {
     Alpine.start()
 });
-import {main} from './RemoteControl'
+import {main,image,image2} from './RemoteControl'
 
 
 window.main = main;
-// window.page = page;
+window.image = image;
+window.image2 = image2;
