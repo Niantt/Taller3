@@ -9,16 +9,26 @@
     <link rel="stylesheet" href="app.css">
     <script src="index.js" defer></script>
     <script>
+        boole=1
         function imag() {
-            
             var imagediv = document.getElementById('gamediv')
             imagediv.innerHTML=""
-            var img = document.createElement('img');
-            img.src = 'http://127.0.0.1/system/station1/dhs1/image?overlay';
-            img.width = "640"
-            img.height = "320"
-            img.align = "center"
-            imagediv.appendChild(img)
+            
+            if(boole==0){
+                console.log("null")
+                var img = document.createElement('img')
+                img.src = 'http://127.0.0.1/system/station1/dhs1/image?overlay'
+                img.width = "640"
+                img.height = "320"
+                img.id = "image"
+                imagediv.appendChild(img)
+                boole=1
+            }
+            else{
+                console.log("nonull")
+                imagediv.innerHTML=""
+                boole=0
+            }
             return imagediv
         }
     </script>
@@ -115,7 +125,7 @@
                             <button @click="senddata('mode','setup',access(),host)" class="btn_main lblstation">Setup </button>
                             <button onclick="imag()" class="btn_main">Img</button>      
                         </div>
-                        <div id="gamediv" class="container content-center w-screen h-96 p-8 bg-black"></div>             
+                        <div id="gamediv" class="container content-center w-screen h-96 p-8 bg-black"></div>           
                         <div class="text-center">
                             <button @click="senddata('first','',access()+'/playback',host)" class="btn-primary" style="background-image: url('/public/img/previous.png') "></button>
                             <button @click="senddata('prev',chFrames(),access()+'/playback',host)"  class="btn-primary" style="background-image: url('/public/img/first.png')"></button>
