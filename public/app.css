@@ -602,6 +602,8 @@ video {
 
 .container {
   width: 100%;
+  margin-right: auto;
+  margin-left: auto;
 }
 
 @media (min-width: 640px) {
@@ -32245,7 +32247,7 @@ video {
 }
 
 .btn_main {
-  margin-top: 1rem;
+  margin-top: 0.25rem;
   width: auto;
   --tw-translate-x: 0;
   --tw-translate-y: 0;
@@ -32301,7 +32303,8 @@ video {
 }
 
 .btn-primary {
-  margin-top: 1rem;
+  margin-top: 0.25rem;
+  margin-right: 1rem;
   --tw-translate-x: 0;
   --tw-translate-y: 0;
   --tw-rotate: 0;
@@ -32320,31 +32323,24 @@ video {
 
 .btn-primary > :not([hidden]) ~ :not([hidden]) {
   --tw-space-x-reverse: 0;
-  margin-right: calc(0.75rem * var(--tw-space-x-reverse));
-  margin-left: calc(0.75rem * calc(1 - var(--tw-space-x-reverse)));
+  margin-right: calc(1.5rem * var(--tw-space-x-reverse));
+  margin-left: calc(1.5rem * calc(1 - var(--tw-space-x-reverse)));
   --tw-space-y-reverse: 0;
-  margin-top: calc(1rem * calc(1 - var(--tw-space-y-reverse)));
-  margin-bottom: calc(1rem * var(--tw-space-y-reverse));
-}
-
-.btn-primary {
-  border-radius: 0.25rem;
-  --tw-bg-opacity: 1;
-  background-color: rgba(16, 185, 129, var(--tw-bg-opacity));
+  margin-top: calc(1.5rem * calc(1 - var(--tw-space-y-reverse)));
+  margin-bottom: calc(1.5rem * var(--tw-space-y-reverse));
 }
 
 .btn-primary:hover {
-  --tw-bg-opacity: 1;
-  background-color: rgba(110, 231, 183, var(--tw-bg-opacity));
+  background-color: transparent;
 }
 
 .btn-primary {
-  padding-left: 1rem;
-  padding-right: 1rem;
-  padding-top: 0.5rem;
-  padding-bottom: 0.5rem;
-  --tw-text-opacity: 1;
-  color: rgba(255, 255, 255, var(--tw-text-opacity));
+  background-size: contain;
+  background-position: center;
+  padding-left: 1.25rem;
+  padding-right: 1.25rem;
+  padding-top: 1.25rem;
+  padding-bottom: 1.25rem;
   transition-property: background-color, border-color, color, fill, stroke, opacity, box-shadow, transform, filter, -webkit-backdrop-filter;
   transition-property: background-color, border-color, color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;
   transition-property: background-color, border-color, color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter, -webkit-backdrop-filter;
@@ -32430,7 +32426,10 @@ video {
 }
 
 .lblstation {
+  text-align: center;
   font-family: ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
+  --tw-text-opacity: 1;
+  color: rgba(255, 255, 255, var(--tw-text-opacity));
 }
 
 .menuizq {
@@ -32451,7 +32450,7 @@ video {
   --tw-scale-y: 1;
   transform: translateX(var(--tw-translate-x)) translateY(var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
   --tw-bg-opacity: 1;
-  background-color: rgba(49, 46, 129, var(--tw-bg-opacity));
+  background-color: rgba(120, 53, 15, var(--tw-bg-opacity));
   padding: 0.75rem;
   --tw-text-opacity: 1;
   color: rgba(255, 255, 255, var(--tw-text-opacity));
@@ -32484,6 +32483,43 @@ video {
   grid-row: span 2 / span 2;
   --tw-bg-opacity: 1;
   background-color: rgba(254, 243, 199, var(--tw-bg-opacity));
+}
+
+.select {
+  pointer-events: auto;
+  display: inline-block;
+  width: auto;
+  -webkit-animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+          animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  -webkit-user-select: text;
+     -moz-user-select: text;
+      -ms-user-select: text;
+          user-select: text;
+  border-radius: 0.25rem;
+  border-radius: 0.25rem;
+  --tw-border-opacity: 1;
+  border-color: rgba(156, 163, 175, var(--tw-border-opacity));
+}
+
+.select:hover {
+  --tw-border-opacity: 1;
+  border-color: rgba(107, 114, 128, var(--tw-border-opacity));
+}
+
+.select {
+  --tw-bg-opacity: 1;
+  background-color: rgba(156, 163, 175, var(--tw-bg-opacity));
+  padding-left: 1rem;
+  padding-right: 1rem;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  padding-right: 2rem;
+  line-height: 1.25;
+}
+
+.select:focus {
+  outline: 2px solid transparent;
+  outline-offset: 2px;
 }
 
 .nav {
@@ -32556,49 +32592,53 @@ video {
   }
 }
 
+.divnorm {
+  width: 100%;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+@media (min-width: 640px) {
+  .divnorm {
+    max-width: 640px;
+  }
+}
+
 @media (min-width: 768px) {
-  .divs {
-    width: 100%;
+  .divnorm {
+    max-width: 768px;
   }
+}
 
-  @media (min-width: 640px) {
-    .divs {
-      max-width: 640px;
-    }
+@media (min-width: 1024px) {
+  .divnorm {
+    max-width: 1024px;
   }
+}
 
-  @media (min-width: 768px) {
-    .divs {
-      max-width: 768px;
-    }
+@media (min-width: 1280px) {
+  .divnorm {
+    max-width: 1280px;
   }
+}
 
-  @media (min-width: 1024px) {
-    .divs {
-      max-width: 1024px;
-    }
+@media (min-width: 1536px) {
+  .divnorm {
+    max-width: 1536px;
   }
+}
 
-  @media (min-width: 1280px) {
-    .divs {
-      max-width: 1280px;
-    }
-  }
-
-  @media (min-width: 1536px) {
-    .divs {
-      max-width: 1536px;
-    }
-  }
-
-  .divs {
-    margin-left: auto;
-    margin-right: auto;
-  }
+.divnorm {
+  position: relative;
+  height: auto;
+  width: auto;
+  padding: 1rem;
 }
 
 .body {
   min-height: 100vh;
+  --tw-bg-opacity: 1;
+  background-color: rgba(31, 41, 55, var(--tw-bg-opacity));
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -32666,6 +32706,8 @@ video {
 @media (min-width: 640px) {
   .sm\:container {
     width: 100%;
+    margin-right: auto;
+    margin-left: auto;
   }
 
   @media (min-width: 640px) {
@@ -63893,6 +63935,8 @@ video {
 @media (min-width: 768px) {
   .md\:container {
     width: 100%;
+    margin-right: auto;
+    margin-left: auto;
   }
 
   @media (min-width: 640px) {
@@ -95120,6 +95164,8 @@ video {
 @media (min-width: 1024px) {
   .lg\:container {
     width: 100%;
+    margin-right: auto;
+    margin-left: auto;
   }
 
   @media (min-width: 640px) {
@@ -126347,6 +126393,8 @@ video {
 @media (min-width: 1280px) {
   .xl\:container {
     width: 100%;
+    margin-right: auto;
+    margin-left: auto;
   }
 
   @media (min-width: 640px) {
@@ -157574,6 +157622,8 @@ video {
 @media (min-width: 1536px) {
   .\32xl\:container {
     width: 100%;
+    margin-right: auto;
+    margin-left: auto;
   }
 
   @media (min-width: 640px) {
